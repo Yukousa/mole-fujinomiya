@@ -1,0 +1,10 @@
+// Style（入口）
+// @use を並べるだけ。スタイルはここに書かない
+// パーシャルを追加したら、ここに @use を足す
+
+// Foundation（variables は必ず先頭）
+@use "foundation/variables";
+@use "foundation/reset";
+@use "foundation/base";
+
+// 以降は rules/naming-*.md のフォルダ構成・記述順に従って足す

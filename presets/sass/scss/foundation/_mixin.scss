@@ -1,0 +1,20 @@
+@use "sass:map";
+
+// myrem() も一緒に渡す。
+// パーシャルの先頭で @use "../foundation/mixin" as *; と書けば、mq() と myrem() の両方が使える
+@forward "function";
+
+// ブレークポイント（モバイルファースト）
+// 使い方：@include mq(md) { ... }
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+@mixin mq($key) {
+  @media (min-width: map.get($breakpoints, $key)) {
+    @content;
+  }
+}

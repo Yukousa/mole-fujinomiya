@@ -1,0 +1,12 @@
+@use "sass:math";
+
+// カンプの px を rem に変換する（16px = 1rem）
+// 使い方：myrem(24) / myrem(24px) → 1.5rem
+@function myrem($px) {
+  @if math.unit($px) == "px" {
+    $px: math.div($px, 1px);
+  } @else if not math.is-unitless($px) {
+    @error "myrem() には px か単位なしの数値を渡してください: #{$px}";
+  }
+  @return math.div($px, 16) * 1rem;
+}
