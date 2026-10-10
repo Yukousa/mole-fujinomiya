@@ -1,0 +1,148 @@
+// FAQ（よくある質問）
+// 紺背景。details / summary で開閉する（JS なしで動き、キーボードでも操作できる）
+// 初期状態はすべて開いている（先方確認中）。矢印は開いているとき上向き、閉じているとき下向き
+// PC の配置は 1440px のカンプの座標から割り出している（ページ中央より 4.25px 右）
+
+@use "../foundation/mixin" as *;
+
+.faq {
+  padding: myrem(74) myrem(24) myrem(42);
+  color: var(--color-text-invert);
+
+  @include mq(md) {
+    padding: 0 0 myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(48);
+
+    @include mq(md) {
+      gap: myrem(54);
+      width: myrem(800);
+      margin-left: myrem(324.25);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-inter); // SP はカンプで Inter 指定。PC は Noto Sans JP
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(32);
+
+      @include text-trim(1.45);
+    }
+  }
+
+  // カンプの SP は1つ目と2つ目の間だけ 131px 空いているが、ずれと判断して 48px にそろえている
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(48);
+
+    @include mq(md) {
+      gap: myrem(20);
+      padding: myrem(10);
+    }
+  }
+
+  &__question {
+    display: flex;
+    gap: myrem(12);
+    align-items: center;
+    cursor: pointer;
+    list-style: none; // 標準の三角を消す
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__q {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    align-self: flex-start;
+    width: myrem(35);
+    height: myrem(35);
+    font-family: var(--font-mark);
+    font-size: myrem(20);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-bg-navy);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-pill);
+
+    @include mq(md) {
+      align-self: center;
+      width: myrem(48);
+      height: myrem(48);
+      margin-right: myrem(7); // 質問文との間隔 19px（gap 12px + 7px）
+      font-size: myrem(26);
+    }
+  }
+
+  &__text {
+    flex: 1;
+    font-size: myrem(18);
+    font-weight: 700;
+    line-height: 1.45;
+
+    @include text-trim(1.45);
+
+    @include mq(md) {
+      line-height: 1.6;
+
+      @include text-trim(1.6);
+    }
+  }
+
+  // 閉じているとき下向き、開いているとき上向き
+  &__arrow {
+    flex-shrink: 0;
+    width: myrem(21);
+    height: myrem(21);
+    transform: rotate(90deg);
+    transition: transform var(--transition);
+  }
+
+  &__item[open] &__arrow {
+    transform: rotate(-90deg);
+  }
+
+  &__answer {
+    padding-left: myrem(40);
+    margin-top: myrem(16);
+
+    @include mq(md) {
+      margin-top: myrem(10);
+    }
+  }
+
+  &__answer-box {
+    padding: myrem(20);
+    background-color: var(--color-overlay-light);
+  }
+
+  // カンプは文字の上下の余白を詰めた状態で、箱の余白 20px を測っている。
+  // 行の高さは 14px × 1.6 = 22.4px を 22px に丸めて積んでいる（PC 4行で 76px、SP 8行で 164px）
+  &__answer-text {
+    font-size: myrem(14);
+    line-height: myrem(22);
+
+    @include text-trim(1.5714); // 22 / 14
+  }
+}

@@ -25,9 +25,10 @@
     "Yu Gothic", "Meiryo", sans-serif;
   --font-heading: var(--font-base); // 仮
   --font-en: "Barlow Condensed", sans-serif; // 英字（ロゴ・日付など）。400 / 700 を読み込み
-  --font-en-wide: "Barlow", sans-serif; // 英字・数字（FIVE FIELDS の番号・フィールド名）。700 のみ読み込み
+  --font-en-wide: "Barlow", sans-serif; // 英字・数字（FIVE FIELDS の番号・フィールド名、PC のお知らせの日付）。300 / 700 を読み込み
   --font-label: "Hiragino Kaku Gothic Pro", "Hiragino Sans", var(--font-base); // FIVE FIELDS のラベル。カンプは Hiragino W6。Mac・iOS 以外は Noto Sans JP で表示
   --font-inter: "Inter", var(--font-base); // 英字は Inter、日本語は Noto Sans JP（カンプで Inter 指定の箇所。Inter に日本語が無いため）
+  --font-mark: Arial, "Helvetica Neue", sans-serif; // FAQ の「Q」（カンプは Arial Bold）
   --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif; // 仮
 
   --font-size-base: 1rem; // rem にしておく。px だと _base.scss の vw スケーリングが効かない
@@ -71,6 +72,9 @@
   --radius-pill: 9999px; // 丸端のラベル（FIVE FIELDS の「食」「製造」など）
   --radius-gallery: 10px; // PC の写真ギャラリー（SP は --radius）
   --color-placeholder: #111111; // 仮 YouTube を埋め込むまでの領域の色
+  --color-thumb-sp: #ddeaf5; // 仮 お知らせのサムネイル（画像が入るまで）SP
+  --color-thumb-pc: #d9d9d9; // 仮 同 PC
+  --color-overlay-light: rgb(255 255 255 / 0.1); // 紺の上に重ねる半透明の白（FAQ の答えの背景）
   --shadow-header: 0 4px 16px rgb(0 0 0 / 0.1); // 仮 スクロール後のヘッダー（カンプに指定なし）。【保留】固定ヘッダーを外しているため今は参照なし
 }
 

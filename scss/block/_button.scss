@@ -44,3 +44,32 @@
     }
   }
 }
+
+// 小（SP だけ小さい。お知らせの「もっと見る」）。button--large と併用する
+// SP：220×52、14px、両端に寄せる（左は矢印と同じ幅の空き）。PC は button--large と同じ
+.button--compact {
+  justify-content: space-between;
+  height: myrem(52);
+  padding-block: 0;
+  padding-inline: myrem(16);
+  font-family: var(--font-inter); // SP はカンプで Inter 指定
+  font-size: myrem(14);
+
+  &::before {
+    width: myrem(21);
+  }
+
+  // メディアクエリ内の button--large の指定は、後に書いたこのモディファイアに負けるので PC の値を書き直す
+  @include mq(md) {
+    height: auto;
+    padding-block: myrem(17);
+    font-family: var(--font-base);
+    font-size: myrem(18);
+  }
+}
+
+.button--compact::before {
+  @include mq(md) {
+    width: myrem(16);
+  }
+}

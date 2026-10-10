@@ -22,10 +22,10 @@
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
   <meta name="theme-color" content="" />
 
-  <!-- Google Fonts：Barlow 700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・700（和文） -->
+  <!-- Google Fonts：Barlow 300・700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・700（和文） -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" />
 
   <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
   <link rel="stylesheet" href="css/style.css">
@@ -362,6 +362,156 @@
               <img class="possibility__banner-icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
             </span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" id="news">
+      <div class="news__inner">
+        <div class="news__content">
+          <h2 class="news__title">お知らせ</h2>
+          <div class="news__body">
+            <!-- 仮：お知らせの内容・サムネイル・リンク先はカンプのダミー。確定したら差し替える -->
+            <ul class="news__list">
+              <li>
+                <a class="news__link" href="#">
+                  <span class="news__thumb"></span>
+                  <span class="news__copy">
+                    <time class="news__date" datetime="2026-09-30">2026.09.30</time>
+                    <span class="news__heading">企業誘致イベント開催のお知らせ</span>
+                    <span class="news__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="news__link" href="#">
+                  <span class="news__thumb"></span>
+                  <span class="news__copy">
+                    <time class="news__date" datetime="2026-09-30">2026.09.30</time>
+                    <span class="news__heading">企業誘致イベント開催のお知らせ</span>
+                    <span class="news__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="news__link" href="#">
+                  <span class="news__thumb"></span>
+                  <span class="news__copy">
+                    <time class="news__date" datetime="2026-09-30">2026.09.30</time>
+                    <span class="news__heading">企業誘致イベント開催のお知らせ</span>
+                    <span class="news__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="news__link" href="#">
+                  <span class="news__thumb"></span>
+                  <span class="news__copy">
+                    <time class="news__date" datetime="2026-09-30">2026.09.30</time>
+                    <span class="news__heading">企業誘致イベント開催のお知らせ</span>
+                    <span class="news__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="news__link" href="#">
+                  <span class="news__thumb"></span>
+                  <span class="news__copy">
+                    <time class="news__date" datetime="2026-09-30">2026.09.30</time>
+                    <span class="news__heading">企業誘致イベント開催のお知らせ</span>
+                    <span class="news__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a class="news__more button button--large button--compact" href="#">
+              もっと見る
+              <img class="button__icon" src="images/arrow-right-navy.svg" alt="" width="21" height="21">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq__inner">
+        <div class="faq__content">
+          <h2 class="faq__title">よくある質問</h2>
+          <!-- 初期状態はすべて開いている（open 属性）。閉じた状態にするかは先方確認中 -->
+          <div class="faq__list">
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">本社を移転せず、富士宮市に拠点を持つことはできますか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">はい、可能です。<br>本社を移転せず、富士宮市にサテライト拠点や活動拠点を設けることができます。富士宮駅前には、住所登記が可能なコワーキングスペースもあります。まずは最小限のコストで拠点を構え、地域との関わりを少しずつ広げていく、といったスタートも可能です。</p>
+                </div>
+              </div>
+            </details>
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">まずはPoCや地域との連携から始めることもできますか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">はい、可能です。<br>富士宮市には、企業や地域、自然環境など、サービスや技術を試すさまざまなフィールドがあります。「いきなり拠点を開設するのではなく、まずは地域で実証実験をしてみたい」といったご相談も歓迎しています。事業内容や実証したいテーマを伺いながら、地域との接点づくりをサポートします。</p>
+                </div>
+              </div>
+            </details>
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">自社のサービスを試せる場所や企業を紹介してもらえますか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">はい。事業内容やご希望を伺ったうえで、可能な範囲でご紹介・調整します。<br>富士宮市内には、さまざまな業種の企業や地域資源があります。「こんな場所でサービスを試してみたい」「こうした課題を持つ企業と連携したい」など、まずはアイデア段階でもご相談ください。内容に応じて、実証フィールドや地域企業などとの接点づくりを一緒に検討します。</p>
+                </div>
+              </div>
+            </details>
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">富士宮市には、どのようなオフィスや物件がありますか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">一般的なオフィスビルのテナントは多くありませんが、空き店舗などの遊休不動産を活用した拠点づくりが可能です。富士宮市では、既存の空き店舗などを活用して、事業所や店舗として利用できる物件を探すことができます。また、まずはコワーキングスペースに入居して住所登記を行うなど、事業の成長段階に合わせて段階的に拠点をつくる方法もあります。物件探しについても、まずはお気軽にご相談ください。</p>
+                </div>
+              </div>
+            </details>
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">拠点を開設する際に、利用できる支援や補助制度はありますか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">はい。拠点の開設や本社機能の移転・拡充に活用できる制度があります。<br>富士宮市では、対象エリアで空き店舗等に出店する場合、改装費や建築費、備品購入費などの一部を補助する制度があります。また、静岡県では、本社機能の移転・拡充を行う企業を対象に、一定の要件を満たす場合、税制上の優遇措置などを受けられる制度があります。制度の対象や要件は事業内容・立地場所などによって異なりますので、活用を検討される場合は、まずはご相談ください。</p>
+                </div>
+              </div>
+            </details>
+            <details class="faq__item" open>
+              <summary class="faq__question">
+                <span class="faq__q" aria-hidden="true">Q</span>
+                <span class="faq__text">分からないことがあったら、どこに問い合わせればいいですか？</span>
+                <img class="faq__arrow" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+              </summary>
+              <div class="faq__answer">
+                <div class="faq__answer-box">
+                  <p class="faq__answer-text">まずは富士宮市商工振興課までお気軽にお問い合わせください。<br>「富士宮市に拠点を持ちたいけれど、何から始めればいいか分からない」という段階でも大丈夫です。拠点開設、PoC・実証実験、地域企業との連携、物件、各種支援制度など、ご相談内容に応じて必要な情報をご案内します。まずはお気軽にお問い合わせください。</p>
+                </div>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
