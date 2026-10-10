@@ -1,0 +1,161 @@
+// Footer
+// 暗い背景。ロゴ → ナビ（SP は縦並び＋右端に→、PC は横並び）→ コピーライト
+// 上の余白には、相談 CTA の箱が重なる分（SP 48.73px / PC 193.5px）を含む
+// SP の「お問い合わせ」はナビの上に出す（order）。PC はナビの右端
+// PC の配置は 1440px のカンプの座標から割り出している
+
+@use "../foundation/mixin" as *;
+
+.footer {
+  padding: myrem(88) myrem(24) myrem(28);
+  color: var(--color-text-invert);
+  background-color: var(--color-bg-dark);
+
+  @include mq(md) {
+    padding: myrem(233.5) 0 myrem(33.4); // 下はカンプのページ下端まで
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(34);
+    align-items: center;
+
+    @include mq(md) {
+      width: myrem(668);
+      margin-left: myrem(394.56);
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(5);
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    font-family: var(--font-en);
+    font-size: myrem(32);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @include mq(md) {
+      font-size: myrem(60);
+    }
+  }
+
+  &__sub {
+    font-family: var(--font-inter); // SP はカンプで Inter 指定。PC は Noto Sans JP
+    font-size: myrem(10);
+    line-height: 1.2;
+    opacity: 0.7;
+
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(14);
+      line-height: 1.4;
+      opacity: 1;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(34);
+    align-items: center;
+    width: 100%;
+
+    // PC：項目の見た目の間隔はカンプどおり 28px。左右 10px ずつをリンクの padding に回してクリック範囲を確保する
+    @include mq(md) {
+      flex-direction: row;
+      gap: myrem(18); // 最後のリンクの右 padding 10px ＋ 18px = 28px
+      width: auto;
+    }
+  }
+
+  &__nav-list {
+    width: 100%;
+
+    @include mq(md) {
+      display: flex;
+      gap: myrem(8); // リンクの padding 10px × 2 ＋ 8px = 28px
+      align-items: center;
+      width: auto;
+      margin-left: myrem(-10);
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: myrem(13) myrem(12); // カンプは 1行 43px（区切り線 1px を含む）
+    font-family: var(--font-inter);
+    font-size: myrem(12);
+    line-height: 1.25;
+    border-bottom: 1px solid var(--color-border-light);
+
+    @include mq(md) {
+      padding: myrem(12) myrem(10);
+      font-family: var(--font-base);
+      font-size: myrem(14);
+      line-height: 1.4;
+      white-space: nowrap;
+      border-bottom: 0;
+    }
+  }
+
+  &__nav-arrow {
+    font-size: myrem(14);
+    line-height: 1.2;
+    color: var(--color-accent);
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  // SP は button--large、PC はヘッダーと同じ小さいボタン
+  &__cta {
+    order: -1;
+
+    @include mq(md) {
+      order: 0;
+      justify-content: flex-start;
+      width: auto;
+      padding: myrem(12) myrem(16);
+      font-size: myrem(14);
+    }
+  }
+
+  &__cta::before {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__copy {
+    font-family: var(--font-inter);
+    font-size: myrem(9);
+    line-height: 1.2;
+    opacity: 0.55;
+
+    @include mq(md) {
+      padding-top: myrem(60); // カンプは nav との間に gap 34px ＋ 上の余白 60px
+      font-family: var(--font-base);
+      font-size: myrem(14);
+      line-height: 1;
+      opacity: 1;
+    }
+  }
+}

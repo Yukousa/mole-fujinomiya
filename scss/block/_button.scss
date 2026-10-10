@@ -73,3 +73,13 @@
     width: myrem(16);
   }
 }
+
+// 白地（フッターの「お問い合わせ」）。文字の色はカンプで SP #08348a / PC #00206b
+.button--white {
+  color: var(--color-bg-navy);
+  background-color: var(--color-bg);
+
+  @include mq(md) {
+    color: var(--color-primary);
+  }
+}

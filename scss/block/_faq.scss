@@ -10,7 +10,7 @@
   color: var(--color-text-invert);
 
   @include mq(md) {
-    padding: 0 0 myrem(128);
+    padding: 0 0 myrem(126); // 相談 CTA の箱までの間隔（カンプ）
   }
 
   &__inner {

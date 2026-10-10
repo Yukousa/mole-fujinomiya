@@ -1,0 +1,84 @@
+// Contact（サテライトオフィス・拠点開設について相談する）
+// 白い箱。紺の背景とフッター（暗い背景）の境目にまたがるので、
+// 負のマージンで箱の下側をフッターに重ね、z-index でフッターより前に出す
+// PC の配置は 1440px のカンプの座標から割り出している
+
+@use "../foundation/mixin" as *;
+
+.contact {
+  position: relative;
+  z-index: var(--z-index-base);
+  padding-inline: myrem(25);
+  margin-bottom: myrem(-48.73); // フッターに重なる量（カンプ）
+
+  @include mq(md) {
+    padding-inline: 0;
+    margin-bottom: myrem(-193.5);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(17);
+    align-items: center;
+    padding: myrem(32) myrem(24);
+    text-align: center;
+    background-color: var(--color-bg);
+
+    @include mq(md) {
+      gap: myrem(23);
+      width: myrem(903);
+      padding: myrem(68) myrem(100);
+      margin-left: myrem(274.63);
+    }
+  }
+
+  &__title {
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-primary);
+
+    @include mq(md) {
+      font-size: myrem(32);
+      line-height: 1.45;
+
+      @include text-trim(1.45);
+    }
+  }
+
+  // カンプの色は SP #083f96 / PC #08348a。SP も #08348a で代用（紺のゆれとして記録）
+  &__lead {
+    font-size: myrem(12);
+    line-height: 1.7;
+    color: var(--color-bg-navy);
+
+    @include mq(md) {
+      font-size: myrem(18);
+      font-weight: 300;
+      line-height: 1.6;
+
+      @include text-trim(1.6);
+    }
+  }
+
+  // SP だけ改行する
+  &__br {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include mq(md) {
+      width: myrem(240);
+    }
+  }
+}
