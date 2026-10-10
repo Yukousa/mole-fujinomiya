@@ -1,0 +1,111 @@
+// Header
+// 固定。hero の上に重ねるので背景は透明。スクロールしたら白背景（is-scrolled）
+// SP：ロゴ＋メニューボタン／PC：ロゴ＋グローバルナビ
+
+@use "../foundation/mixin" as *;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-index-header);
+  transition: background-color var(--transition);
+
+  &.is-scrolled {
+    background-color: var(--color-bg);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height-sp);
+    padding-inline: var(--container-padding-sp);
+
+    // PC はナビをロゴ1行目の高さに揃えるため上揃え
+    @include mq(md) {
+      align-items: flex-start;
+      height: var(--header-height-pc);
+      padding-top: myrem(21);
+      padding-inline: var(--container-padding-pc-left) var(--container-padding-pc-right);
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(2);
+    white-space: nowrap;
+
+    @include mq(md) {
+      gap: 0;
+    }
+  }
+
+  &__logo {
+    font-family: var(--font-en);
+    font-size: myrem(26);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary);
+
+    @include mq(md) {
+      font-size: myrem(40);
+    }
+  }
+
+  &__sub {
+    font-size: myrem(8);
+    line-height: 1.2;
+
+    @include mq(md) {
+      font-size: myrem(14);
+      line-height: 1.4;
+    }
+  }
+
+  // 項目の見た目の間隔はカンプどおり 20px。
+  // 左右 10px ずつをリンクの padding に回してクリック範囲を確保し、
+  // 先頭の padding 分はリストの負マージンで打ち消す
+  &__nav {
+    display: none;
+
+    @include mq(md) {
+      display: flex;
+      gap: myrem(10);
+      align-items: center;
+      margin-top: myrem(2);
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    margin-left: myrem(-10);
+  }
+
+  &__nav-link {
+    display: block;
+    padding: myrem(12) myrem(10);
+    font-size: myrem(14);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  &__menu {
+    display: grid;
+    place-items: center;
+    width: myrem(44);
+    height: myrem(44);
+    background-color: var(--color-bg-subtle);
+    border-radius: var(--radius);
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    width: myrem(20);
+    height: myrem(20);
+  }
+}

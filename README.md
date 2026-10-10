@@ -24,30 +24,32 @@ HTML、バニラ JS。CSS は案件ごとに 素の CSS / Sass / Tailwind から
 
 ## 構成
 
+CSS：Sass ／ 命名：BEM ／ カンプ：Figma
+
 ```
-lp-starter/
+mole-fujinomiya/
 ├── CLAUDE.md          コーディング規約（Claude Code が自動読込）。方式を問わないルール
-├── サイト情報.md       案件ごとの情報。着手時に転記する
-├── rules/             CSS の方式・命名ごとのルール。展開時に使う分だけ残す
-│   ├── css-plain.md / css-sass.md / css-tailwind.md
-│   ├── naming-flocss.md / naming-bem.md
-│   └── figma-mcp.md   Figma のカンプから実装する手順（方式共通）
+├── サイト情報.md       案件ごとの情報
+├── rules/
+│   ├── css-sass.md    Sass の書き方
+│   ├── naming-bem.md  クラス名の付け方
+│   └── figma-mcp.md   Figma のカンプから実装する手順
 ├── scripts/
 │   └── figma-asset.mjs  Figma の画像を images/ に保存する
-├── presets/           CSS 方式ごとの初期ファイル。展開後に削除する
-│   ├── README.md      展開手順
-│   ├── plain/         css/（variables / reset / base / style）
-│   ├── sass/          scss/、package.json
-│   └── tailwind/      src/input.css、package.json
+├── scss/              編集するのはこちら
+│   ├── style.scss     入口。@use を並べるだけ
+│   └── foundation/    variables / mixin / function / reset / base
+├── css/style.css      scss からのビルド結果（直接編集しない・コミットする）
 ├── index.html
 ├── js/main.js
 ├── images/            画像（_src/ に元画像を置く）
+├── package.json
 ├── .vscode/settings.json
 ├── .gitignore
 └── .gitattributes
 ```
 
-テンプレートの状態では `css/` が無いため、`index.html` を開いてもスタイルは当たらない。
+`npm run dev` を動かしたまま Live Server で `index.html` を開く。
 
 ---
 

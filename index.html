@@ -22,30 +22,108 @@
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
   <meta name="theme-color" content="" />
 
-  <!-- 仮 Google Fonts：カンプのフォント・ウェイトに合わせて差し替え、差し替えたら「仮」を消す -->
+  <!-- Google Fonts：Barlow Condensed 400・700（英字）／ Noto Sans JP 400・700（和文） -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" />
 
-  <!-- CSS（読み込み順固定：variables → reset → base → style） -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/base.css">
+  <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="l-header">
-    <div class="l-header__inner l-inner">
+  <header class="header js-header">
+    <div class="header__inner">
+      <a class="header__brand" href="./">
+        <span class="header__logo">FUJINOMIYA FIVE FIELDS</span>
+        <span class="header__sub">富士宮市サテライトオフィス</span>
+      </a>
+
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a class="header__nav-link" href="#about">富士宮市について</a></li>
+          <li><a class="header__nav-link" href="#five-fields">FUJINOMIYA FIVE FIELDS</a></li>
+          <li><a class="header__nav-link" href="#case">事例</a></li>
+          <li><a class="header__nav-link" href="#news">お知らせ</a></li>
+          <li><a class="header__nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <a class="header__cta button" href="#contact">
+          お問い合わせ
+          <img class="button__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+        </a>
+      </nav>
+
+      <button class="header__menu js-drawer-open" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+        <img class="header__menu-icon" src="images/icon-menu.svg" alt="" width="20" height="20">
+      </button>
     </div>
   </header>
 
-  <main class="l-main">
+  <!-- ドロワー（SP のみ）。カンプ無しのため仮デザイン -->
+  <div class="drawer js-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
+    <button class="drawer__close js-drawer-close" type="button" aria-label="メニューを閉じる"></button>
+    <nav aria-label="グローバルナビゲーション（SP）">
+      <ul class="drawer__list">
+        <li><a class="drawer__link js-drawer-link" href="#about">富士宮市について</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#five-fields">FUJINOMIYA FIVE FIELDS</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#case">事例</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#news">お知らせ</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#faq">FAQ</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <section class="hero">
+      <div class="hero__main">
+        <picture class="hero__visual">
+          <source media="(min-width: 768px)" srcset="images/hero-01-pc.webp" width="1529" height="992">
+          <img class="hero__visual-img" src="images/hero-01-sp.webp" alt="酪農、いちご、ラフティング、ビジネス、精肉、リモートワーク、ものづくり、飲料工場など、富士宮市の産業と自然の写真" width="780" height="664">
+        </picture>
+
+        <div class="hero__copy">
+          <img class="hero__deco-sp" src="images/hero-02-sp.webp" alt="" width="196" height="189">
+          <p class="hero__tag">新規事業に取り組む企業へ</p>
+          <h1 class="hero__title">事業フィールドに、<br>富士宮という選択肢。</h1>
+          <p class="hero__lead">富士宮市には、新しい商品やサービスを生み出すための、<br class="hero__br">多様な地域資源と産業があります。<br class="hero__br">富士宮から、新しい事業の可能性を広げてみませんか。</p>
+          <div class="hero__actions">
+            <a class="hero__cta button button--large" href="#contact">
+              お問い合わせ
+              <img class="button__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+            </a>
+            <a class="hero__reason" href="#about">
+              <img class="hero__reason-icon" src="images/icon-circle-question-mark.svg" alt="" width="24" height="24">
+              富士宮市が選ばれる理由
+            </a>
+          </div>
+        </div>
+
+        <img class="hero__cloud" src="images/cloud.svg" alt="" width="162" height="102">
+        <img class="hero__bird" src="images/bird.png" alt="" width="60" height="60">
+
+        <a class="hero__topics" href="#news">
+          <span class="hero__topics-meta">
+            <span class="hero__topics-label">NEW TOPICS</span>
+            <time datetime="2026-09-30">2026.09.30</time>
+          </span>
+          <span class="hero__topics-body">
+            企業誘致イベント開催のお知らせ
+            <img class="hero__topics-icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+          </span>
+        </a>
+      </div>
+
+      <picture class="hero__mountain">
+        <source media="(min-width: 768px)" srcset="images/mountain-pc.webp" width="2880" height="664">
+        <img class="hero__mountain-img" src="images/mountain-sp.webp" alt="" width="780" height="284">
+      </picture>
+    </section>
   </main>
 
-  <footer class="l-footer">
-    <div class="l-footer__inner l-inner">
+  <footer class="footer">
+    <div class="footer__inner inner">
     </div>
   </footer>
 </body>

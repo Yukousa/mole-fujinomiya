@@ -1,0 +1,46 @@
+// Button
+// 紺地・白文字・オレンジの矢印付きボタン。ヘッダー／ヒーロー／フッターで使う
+// サイズ違いはモディファイアで足す
+
+@use "../foundation/mixin" as *;
+
+.button {
+  display: inline-flex;
+  gap: myrem(8);
+  align-items: center;
+  padding: myrem(12) myrem(16);
+  font-size: myrem(14);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-invert);
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+
+  &__icon {
+    flex-shrink: 0;
+    width: myrem(21);
+    height: myrem(21);
+  }
+
+  // 大（ヒーロー）。文字を中央に置くため、左に矢印と同じ幅の空きを作る
+  // （カンプでは左に紺の矢印が置かれていて背景と同化している）
+  // SP：幅 220px・左寄せ。26 + 空き16 + 8 + 文字108 + 8 + 矢印21 + 余り7 + 26
+  //     （Figma の書き出し画像とピクセル比較して確認済み）
+  // PC：幅 263px で両端に寄せる
+  &--large {
+    width: myrem(220);
+    padding: myrem(17) myrem(26);
+    font-size: myrem(18);
+
+    &::before {
+      width: myrem(16);
+      content: "";
+    }
+
+    @include mq(md) {
+      justify-content: space-between;
+      width: myrem(263);
+      padding-inline: myrem(16);
+    }
+  }
+}

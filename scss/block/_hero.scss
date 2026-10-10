@@ -1,0 +1,248 @@
+// Hero
+// 固定ヘッダーの下に潜る分を padding-top で空ける
+// SP：コラージュ → コピー → 富士山
+// PC：左にコピー、右にコラージュ（1枚画像）、下に富士山。PC の配置は 1440px のカンプの座標から割り出している
+//     （上端の基準はヘッダー下端 = y110）
+
+@use "../foundation/mixin" as *;
+
+.hero {
+  position: relative;
+  padding-top: var(--header-height-sp);
+  overflow: hidden; // SP の雲が右端からはみ出す
+
+  @include mq(md) {
+    padding-top: var(--header-height-pc);
+  }
+
+  &__main {
+    position: relative;
+
+    @include mq(md) {
+      max-width: myrem(1440);
+      min-height: myrem(533); // 富士山の画像の上端（y643）まで
+      margin-inline: auto;
+    }
+  }
+
+  // コラージュ（PC は雲・鳥・オレンジの丸まで含めた1枚）
+  &__visual {
+    display: block;
+
+    @include mq(md) {
+      position: absolute;
+      top: myrem(29);
+      left: myrem(670);
+      width: myrem(764);
+    }
+  }
+
+  &__visual-img {
+    width: 100%;
+    height: auto;
+  }
+
+  // 子の装飾（z-index: -1）をこの中に閉じ込めるため z-index を指定する
+  &__copy {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    gap: myrem(9);
+    padding: myrem(16) myrem(32) myrem(36);
+    margin-top: myrem(-12); // カンプでコラージュに 12px 重なっている
+
+    @include mq(md) {
+      gap: myrem(38);
+      width: myrem(168 + 584);
+      padding: myrem(80) 0 0 myrem(168);
+      margin-top: 0;
+    }
+  }
+
+  &__tag {
+    align-self: flex-start;
+    padding: myrem(7) myrem(10);
+    font-size: myrem(11);
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--color-text-invert);
+    background-color: var(--color-accent);
+    border-radius: var(--radius-tag);
+
+    @include mq(md) {
+      padding: myrem(6) myrem(8);
+      font-size: myrem(18);
+      line-height: 1;
+      border-radius: 0;
+    }
+  }
+
+  &__title {
+    font-size: myrem(28);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-primary);
+
+    @include mq(md) {
+      margin-top: myrem(-22); // カンプは文字の上下の余白を詰めて（text-box-trim）間隔を測っているので、その分を引く
+      font-size: myrem(49);
+      line-height: 1.35;
+    }
+  }
+
+  &__lead {
+    font-size: myrem(14);
+    line-height: 1.8;
+
+    @include mq(md) {
+      font-size: myrem(18);
+      line-height: 1.5;
+      margin-top: myrem(-22); // 同上
+    }
+  }
+
+  // PC だけ改行する
+  &__br {
+    display: none;
+
+    @include mq(md) {
+      display: inline;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(4);
+    align-items: flex-start;
+    margin-top: myrem(14); // 本文との間隔を 24px にする（親の gap は 9px）。見出しと本文の行の高さの端数（計 +1px）を引いている
+
+    @include mq(md) {
+      align-self: flex-start;
+      align-items: center;
+      margin-top: myrem(-6); // 同上
+    }
+  }
+
+  &__reason {
+    display: inline-flex;
+    gap: myrem(8);
+    align-items: center;
+    padding-block: myrem(11);
+    font-size: myrem(16);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-primary);
+
+    @include mq(md) {
+      font-size: myrem(18);
+    }
+  }
+
+  &__reason-icon {
+    flex-shrink: 0;
+    width: myrem(24);
+    height: myrem(24);
+  }
+
+  // SP：コピー右上の雲と鳥（1枚画像）
+  &__deco-sp {
+    position: absolute;
+    top: myrem(30);
+    right: 0;
+    z-index: -1;
+    width: myrem(98);
+    height: auto;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  // PC：左の雲と鳥
+  &__cloud,
+  &__bird {
+    display: none;
+
+    @include mq(md) {
+      position: absolute;
+      display: block;
+      height: auto;
+    }
+  }
+
+  &__cloud {
+    top: myrem(142);
+    left: myrem(28);
+    width: myrem(162);
+  }
+
+  // 元画像を左右反転して使っている
+  &__bird {
+    top: myrem(261);
+    left: myrem(27);
+    width: myrem(60);
+    transform: scaleX(-1);
+  }
+
+  // PC：最新のお知らせ
+  &__topics {
+    display: none;
+
+    @include mq(md) {
+      position: absolute;
+      top: myrem(532);
+      left: myrem(1021);
+      display: block;
+      width: myrem(346);
+      height: myrem(66.65); // カンプで高さ固定（中身から計算すると 62px になる）
+      padding: myrem(12);
+      color: var(--color-primary);
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+    }
+  }
+
+  // カンプは文字の上下の余白を詰めて（text-box-trim）行の高さを測っている。
+  // 1行目は大文字の高さ 8px、2行目は矢印の高さ 21px に合わせる
+  &__topics-meta {
+    display: flex;
+    gap: myrem(7);
+    font-family: var(--font-en);
+    font-size: myrem(12);
+    line-height: myrem(8);
+    margin-top: myrem(-1); // 英字の縦位置をカンプに合わせる（ピクセル比較で 1px 下にずれる）
+  }
+
+  &__topics-label {
+    font-weight: 700;
+  }
+
+  &__topics-body {
+    display: flex;
+    gap: myrem(8);
+    align-items: center;
+    justify-content: space-between;
+    margin-top: myrem(8); // カンプは 7px。1行目を 1px 上げた分を戻す
+    font-size: myrem(14);
+    line-height: 1;
+  }
+
+  &__topics-icon {
+    flex-shrink: 0;
+    width: myrem(21);
+    height: myrem(21);
+  }
+
+  // 富士山（全幅）
+  &__mountain {
+    display: block;
+  }
+
+  &__mountain-img {
+    width: 100%;
+    height: auto;
+  }
+}

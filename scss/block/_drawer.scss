@@ -1,0 +1,81 @@
+// Drawer（SP のみ）
+// カンプ無し。仮：紺背景・白文字・ナビを中央に配置・右からスライドイン
+// 開閉は js/main.js で is-open を付け外しする
+
+@use "../foundation/mixin" as *;
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-drawer);
+  display: grid;
+  place-items: center;
+  color: var(--color-text-invert);
+  visibility: hidden;
+  background-color: var(--color-primary);
+  transform: translateX(100%);
+  transition:
+    transform var(--transition),
+    visibility var(--transition);
+
+  &.is-open {
+    visibility: visible;
+    transform: none;
+  }
+
+  // ヘッダーのメニューボタンと同じ位置に置く
+  &__close {
+    position: absolute;
+    top: myrem(12);
+    right: var(--container-padding-sp);
+    width: myrem(44);
+    height: myrem(44);
+    color: var(--color-text-invert); // button は親の color を継承しないので明示する
+
+    // × の2本線（カンプに閉じるアイコンが無いため CSS で描く）
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: myrem(20);
+      height: 2px;
+      content: "";
+      background-color: currentColor;
+      border-radius: 1px;
+    }
+  }
+
+  &__close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &__close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  // 項目の見た目の間隔は 32px。うち 22px（上下 11px ずつ）をリンクの padding に回してクリック範囲を確保する
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(10);
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    padding: myrem(11) myrem(16);
+    font-size: myrem(16);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+// ドロワーを開いている間は背面をスクロールさせない
+.is-drawer-open {
+  overflow: hidden;
+}
