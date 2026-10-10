@@ -1,0 +1,142 @@
+// Stat（富士宮の数字のカード）
+// 白枠・中央揃え。ラベル（アイコン＋項目名）、数字（注記＋数字＋単位）、年度、右下にオレンジの三角
+// 寸法は PC のカンプ（180×180）の px を u() で書く。SP は --stat-u を 104/180 倍にして全体を同じ比率で縮める
+// カンプの数字まわりは文字を手で重ねて配置しているため、ここではベースラインで揃えて横に並べている
+
+@use "../foundation/mixin" as *;
+
+// PC のカンプの px → カードの基準単位の倍数
+@function u($px) {
+  @return calc(var(--stat-u) * #{$px});
+}
+
+.stat {
+  --stat-u: calc(#{myrem(1)} * 104 / 180); // SP はカードが 104×105 なので、中身を 104/180 倍にする
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: u(17);
+  align-items: center;
+  justify-content: center;
+  width: myrem(104);
+  height: myrem(105);
+  color: var(--color-text-invert);
+  white-space: nowrap;
+  border: 2px solid currentColor;
+
+  @include mq(md) {
+    --stat-u: #{myrem(1)};
+
+    width: u(180);
+    height: u(180);
+  }
+
+  // 右下の三角。right / bottom は枠線（2px）の内側から測るので、カンプの座標（枠線の外側から）より 2px 小さくする
+  // SP はカードが 104×105 で縦横の比率が違うため、右と下を別々に合わせている（カンプ：右 4px・下 3px）
+  &::after {
+    position: absolute;
+    right: u(3.5);
+    bottom: u(1.75);
+    width: u(13.69);
+    height: u(13.69);
+    content: "";
+    background-color: var(--color-accent);
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+    // PC：カンプは端から 6px
+    @include mq(md) {
+      right: u(4.15);
+      bottom: u(4.15);
+    }
+  }
+
+  &__label {
+    display: flex;
+    gap: u(8);
+    align-items: center;
+    font-size: u(24);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__label-text {
+    @include text-trim(1.6);
+  }
+
+  // アイコンが無く、文字だけのラベル（1〜2行）
+  &__label--text {
+    font-size: u(17);
+    text-align: center;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: u(32);
+    height: u(32);
+  }
+
+  &__icon--small {
+    width: u(24);
+    height: u(24);
+  }
+
+  &__value {
+    display: flex;
+    align-items: baseline;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  // 注記が数字の上にある形（1人当たり など）。注記は数字の左端に揃える
+  &__value--stack {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  &__note {
+    margin-right: u(2);
+    font-size: u(16);
+  }
+
+  // 注記の上の余白（約 0.2em）を詰め、数字の大文字の上端までカンプどおりの間隔にする
+  &__value--stack &__note {
+    grid-column: 1 / -1;
+    margin: -0.2em 0 u(6);
+    font-size: u(12);
+  }
+
+  // カンプは数字の上下の余白を切り落とし、大文字の高さ（約 0.7em）で間隔を測っている。
+  // Barlow Condensed は行の高さ 1 のとき、大文字の上に約 0.2em・ベースラインの下に約 0.1em の余白がある
+  &__num {
+    margin-block: -0.2em -0.1em;
+    font-family: var(--font-en);
+    font-size: u(50);
+  }
+
+  &__num--m {
+    font-size: u(38);
+  }
+
+  &__num--s {
+    font-size: u(32);
+  }
+
+  &__unit {
+    margin-left: u(4);
+    font-size: u(20);
+  }
+
+  &__unit--s {
+    font-size: u(16);
+  }
+
+  &__year {
+    font-size: u(12);
+    font-weight: 400;
+    line-height: 1.6;
+
+    @include text-trim(1.6);
+  }
+}

@@ -70,6 +70,7 @@
   --radius-chip: 6px; // タグ（FIVE FIELDS のキーワード）
   --radius-pill: 9999px; // 丸端のラベル（FIVE FIELDS の「食」「製造」など）
   --radius-gallery: 10px; // PC の写真ギャラリー（SP は --radius）
+  --color-placeholder: #111111; // 仮 YouTube を埋め込むまでの領域の色
   --shadow-header: 0 4px 16px rgb(0 0 0 / 0.1); // 仮 スクロール後のヘッダー（カンプに指定なし）。【保留】固定ヘッダーを外しているため今は参照なし
 }
 

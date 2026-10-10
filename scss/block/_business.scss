@@ -1,0 +1,105 @@
+// Business（富士宮のビジネス環境を見る）
+// 紺背景。見出し → YouTube の領域 → 数字のカード
+// PC の配置は 1440px のカンプの座標から割り出している
+
+@use "../foundation/mixin" as *;
+
+.business {
+  padding: myrem(54) myrem(24) myrem(64);
+  color: var(--color-text-invert);
+  background-color: var(--color-bg-navy);
+
+  @include mq(md) {
+    padding: 0 0 myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(32);
+
+    @include mq(md) {
+      gap: myrem(54);
+      align-items: center;
+      width: myrem(1000);
+      margin-left: myrem(224.25);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(16);
+
+    @include mq(md) {
+      gap: myrem(40);
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-inter); // SP はカンプで Inter 指定。PC は Noto Sans JP
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.45;
+
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(32);
+
+      @include text-trim(1.45);
+    }
+  }
+
+  &__lead {
+    font-size: myrem(14);
+    line-height: myrem(21); // カンプは 14px の normal を 21px に丸めて積んでいる（4行で 84px）
+    opacity: 0.86;
+
+    @include mq(md) {
+      font-size: myrem(18);
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 1;
+
+      @include text-trim(1.6);
+    }
+  }
+
+  // YouTube を埋め込む予定の領域（埋め込むまでは黒い四角）
+  // PC は 16:9。SP はカンプの高さ 196px（16:9 なら 192.4px）
+  &__video {
+    width: 100%;
+    height: myrem(196);
+    background-color: var(--color-placeholder);
+    border-radius: var(--radius);
+
+    @include mq(md) {
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 0;
+    }
+  }
+
+  // 数字のカード。SP は3列、PC は5列。最後の段は中央に寄せる
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: myrem(10);
+    justify-content: center;
+    width: myrem(340);
+
+    @include mq(md) {
+      gap: myrem(20);
+      width: myrem(980);
+    }
+  }
+}

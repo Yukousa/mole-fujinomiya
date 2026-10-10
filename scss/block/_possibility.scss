@@ -1,0 +1,137 @@
+// Possibility（富士宮で出来ること）
+// 紺背景の上に白いボックス。見出し・紹介文・note へのバナーリンク
+// バナーの写真は紺を重ねた状態で書き出してあるので、そのまま敷いて文字を中央に置く
+
+@use "../foundation/mixin" as *;
+
+.possibility {
+  padding-inline: myrem(25);
+
+  @include mq(md) {
+    padding: 0 0 myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(10);
+    align-items: center;
+    padding: myrem(28) myrem(20);
+    text-align: center;
+    background-color: var(--color-bg);
+
+    @include mq(md) {
+      gap: myrem(34);
+      width: myrem(1000);
+      padding: myrem(68) myrem(100);
+      margin-left: myrem(224.25);
+    }
+  }
+
+  &__head {
+    display: contents; // SP は見出し・紹介文・バナーを同じ間隔（10px）で並べる
+
+    @include mq(md) {
+      display: flex;
+      flex-direction: column;
+      gap: myrem(23);
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--color-primary);
+
+    @include mq(md) {
+      font-size: myrem(32);
+      color: var(--color-bg-navy); // PC はカンプで #08348a（SP は #00206b）
+
+      @include text-trim(1.45);
+    }
+  }
+
+  // カンプの色は SP #083f96 / PC #08348a。SP も #08348a で代用（紺のゆれとして記録）
+  &__lead {
+    font-size: myrem(12);
+    line-height: 1.7;
+    color: var(--color-bg-navy);
+
+    @include mq(md) {
+      font-size: myrem(18);
+      font-weight: 300;
+      line-height: 1.6;
+
+      @include text-trim(1.6);
+    }
+  }
+
+  &__banner {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: myrem(310);
+    height: myrem(109.87);
+    overflow: hidden;
+    color: var(--color-text-invert);
+
+    @include mq(md) {
+      width: myrem(800);
+      height: myrem(200);
+      padding-top: myrem(8); // カンプは文字と矢印の行がバナーの中央より 4px 下
+    }
+  }
+
+  // picture もグリッドのマスを取ってしまうので、絶対配置で背面に敷く
+  &__picture {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__banner-text {
+    position: relative;
+    display: flex;
+    gap: myrem(20);
+    align-items: center;
+    font-size: myrem(18);
+    font-weight: 700;
+    line-height: 1.45;
+    white-space: nowrap;
+
+    @include mq(md) {
+      font-size: myrem(26);
+    }
+  }
+
+  // 文字だけ 0.1 文字分上げて、矢印と中心をそろえる（カンプの位置）
+  &__banner-label {
+    position: relative;
+    top: -0.1em;
+  }
+
+  &__banner-icon {
+    flex-shrink: 0;
+    width: myrem(26);
+    height: myrem(26);
+
+    @include mq(md) {
+      width: myrem(32);
+      height: myrem(32);
+    }
+  }
+}
