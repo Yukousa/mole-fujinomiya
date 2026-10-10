@@ -22,10 +22,10 @@
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
   <meta name="theme-color" content="" />
 
-  <!-- Google Fonts：Barlow Condensed 400・700（英字）／ Noto Sans JP 400・700（和文） -->
+  <!-- Google Fonts：Barlow 700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・700（和文） -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" />
 
   <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
   <link rel="stylesheet" href="css/style.css">
@@ -119,6 +119,142 @@
         <source media="(min-width: 768px)" srcset="images/mountain-pc.webp" width="2880" height="664">
         <img class="hero__mountain-img" src="images/mountain-sp.webp" alt="" width="780" height="284">
       </picture>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about__inner">
+        <div class="about__body">
+          <div class="about__head">
+            <p class="about__eyebrow">
+              <img class="about__eyebrow-icon" src="images/icon-circle-question-mark.svg" alt="" width="24" height="24">
+              <span class="about__eyebrow-text">富士宮市が選ばれる理由</span>
+            </p>
+            <!-- SP と PC で文言が違う（SP は「。」あり・PC は改行）。先方確認待ち -->
+            <h2 class="about__title">東京から約2時間<span class="about__sp">。</span><br class="about__pc">富士山の<br class="about__sp">麓に広がるビジネスフィールド</h2>
+            <p class="about__lead">富士山の水や自然、農業・酪農、製造業、観光など、地域にあるさまざまな資源が、<br class="about__pc">新しいビジネスの土台になっています。</p>
+          </div>
+
+          <div class="scroller" tabindex="0" role="region" aria-label="富士宮市が選ばれる理由（横にスクロールできます）">
+            <ul class="about__list scroller__list">
+              <li class="about__item scroller__item card">
+                <img class="card__img" src="images/business-fields-01.webp" alt="紅葉に囲まれた湖と富士山" width="509" height="381" loading="lazy">
+                <h3 class="card__title">温暖な気候と豊富な自然環境</h3>
+                <p class="card__text">富士宮市は、日本一の富士山と雄大な自然環境があります。1年を通して温暖な気候なのでサテライトオフィスにぴったりです。</p>
+              </li>
+              <li class="about__item scroller__item card">
+                <img class="card__img" src="images/business-fields-02.webp" alt="鉄橋を走る新幹線" width="510" height="381" loading="lazy">
+                <h3 class="card__title">東京都心まで約2時間</h3>
+                <p class="card__text">自然環境が豊富にありながら、都市部からの距離も非常に近く市内から都市部へ通勤している人も多く存在します。</p>
+              </li>
+              <li class="about__item scroller__item card">
+                <img class="card__img" src="images/business-fields-03.webp" alt="ノートパソコンで作業する手元" width="509" height="381" loading="lazy">
+                <h3 class="card__title">充実のインターネット環境</h3>
+                <p class="card__text">市内全域に光回線が通っており、インターネット環境の心配をする必要はありません。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fields" id="five-fields">
+      <div class="fields__inner">
+        <div class="fields__top">
+          <div class="fields__intro">
+            <h2 class="fields__title" lang="en">FUJINOMIYA FIVE FIELDS</h2>
+            <p class="fields__subtitle">富士宮の5つの可能性</p>
+            <p class="fields__lead">食、製造、自然、観光、地域課題。<br>富士宮市の地域資源や産業を、<br class="fields__br">企業が新しい商品・サービスをつくり、試すための<br class="fields__br">5つのフィールドとして活用できます。</p>
+          </div>
+          <img class="fields__figure" src="images/five-fields.svg" alt="富士宮の5つのフィールド：FOOD、FACTORY、NATURE、TOURISM、LIVING" width="370" height="353" loading="lazy">
+        </div>
+
+        <ol class="fields__list">
+          <li class="fields__item field">
+            <div class="field__head">
+              <span class="field__num">01</span>
+              <h3 class="field__title"><span class="field__name" lang="en">FOOD FIELD</span><span class="field__label">食</span></h3>
+            </div>
+            <p class="field__text">富士山の豊かな水に恵まれ、農業・酪農・畜産・養鶏・養鱒など、多様な一次産業が盛んです。地域素材を活用した商品開発から、生産技術、スマート農業、食品加工、アップサイクルまで、新たな食のビジネスにつなげられます。</p>
+            <ul class="field__tags">
+              <li class="field__tag">商品開発</li>
+              <li class="field__tag">FoodTech</li>
+              <li class="field__tag">スマート農業</li>
+              <li class="field__tag">アップサイクル</li>
+            </ul>
+          </li>
+          <li class="fields__item field">
+            <div class="field__head">
+              <span class="field__num">02</span>
+              <h3 class="field__title"><span class="field__name" lang="en">FACTORY FIELD</span><span class="field__label">製造</span></h3>
+            </div>
+            <p class="field__text">市内には数百の製造事業所が集積。既存の工場をフィールドに、AI画像検査、IoT、ロボティクス、省人化、設備保全など、製造現場の課題に向き合うサービスの開発・実証ができます。</p>
+            <ul class="field__tags">
+              <li class="field__tag">工場DX</li>
+              <li class="field__tag">AI</li>
+              <li class="field__tag">IoT</li>
+              <li class="field__tag">ロボティクス</li>
+              <li class="field__tag">省人化</li>
+            </ul>
+          </li>
+          <li class="fields__item field">
+            <div class="field__head">
+              <span class="field__num">03</span>
+              <h3 class="field__title"><span class="field__name" lang="en">NATURE FIELD</span><span class="field__label">自然</span></h3>
+            </div>
+            <p class="field__text">富士山、高原、森林、農地、河川など、さまざまな自然環境があります。ドローンやモビリティ、通信、森林管理、環境センシング、再生可能エネルギーなど、自然を活かした技術やサービスの実証に活用できます。</p>
+            <ul class="field__tags">
+              <li class="field__tag">ドローン</li>
+              <li class="field__tag">モビリティ</li>
+              <li class="field__tag">環境Tech</li>
+              <li class="field__tag">通信</li>
+              <li class="field__tag">エネルギー</li>
+            </ul>
+          </li>
+          <li class="fields__item field">
+            <div class="field__head">
+              <span class="field__num">04</span>
+              <h3 class="field__title"><span class="field__name" lang="en">TOURISM FIELD</span><span class="field__label">観光</span></h3>
+            </div>
+            <p class="field__text">国内外から多くの観光客が訪れるため、観光DXや多言語AI、キャッシュレス、MaaS、アウトドア製品など、観光客の移動や滞在、現地での体験をより良くするサービスや商品の実証ができます。</p>
+            <ul class="field__tags">
+              <li class="field__tag">観光DX</li>
+              <li class="field__tag">多言語AI</li>
+              <li class="field__tag">MaaS</li>
+              <li class="field__tag">インバウンド</li>
+              <li class="field__tag">アウトドア</li>
+            </ul>
+          </li>
+          <li class="fields__item field">
+            <div class="field__head">
+              <span class="field__num">05</span>
+              <h3 class="field__title"><span class="field__name" lang="en">LIVING FIELD</span><span class="field__label field__label--tight">地域課題</span></h3>
+            </div>
+            <p class="field__text">人口減少、高齢化、人手不足、防災など、多くの地域に共通する地域課題があります。地域の中でサービスや技術を試し、そこで得た成果を他の地域へ展開することもできます。</p>
+            <ul class="field__tags">
+              <li class="field__tag">防災Tech</li>
+              <li class="field__tag">地域DX</li>
+              <li class="field__tag">HR</li>
+              <li class="field__tag">SaaS</li>
+              <li class="field__tag">地域サービス</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 動きの仕様は先方確認中。SP は横スクロール、PC は静止（about のカードと同じ） -->
+    <section class="gallery" aria-label="富士宮の風景">
+      <div class="gallery__inner">
+        <div class="scroller" tabindex="0" role="region" aria-label="富士宮の風景写真（横にスクロールできます）">
+          <ul class="gallery__list scroller__list">
+            <li class="scroller__item"><img class="gallery__img" src="images/gallery-01.webp" alt="富士山本宮浅間大社の楼門の前に立つ女性" width="605" height="1076" loading="lazy"></li>
+            <li class="scroller__item"><img class="gallery__img" src="images/gallery-02.webp" alt="牛舎で餌を食べる乳牛" width="605" height="1076" loading="lazy"></li>
+            <li class="scroller__item"><img class="gallery__img" src="images/gallery-03.webp" alt="ピンクの花が咲く木" width="605" height="1076" loading="lazy"></li>
+            <li class="scroller__item"><img class="gallery__img" src="images/gallery-04.webp" alt="富士山と放牧された牛" width="605" height="1076" loading="lazy"></li>
+            <li class="scroller__item"><img class="gallery__img" src="images/gallery-05.webp" alt="流鏑馬（やぶさめ）" width="605" height="1076" loading="lazy"></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 

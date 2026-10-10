@@ -1,0 +1,35 @@
+// Card
+// 写真＋見出し＋本文。紺背景の上に置く（文字は白）
+// 「富士宮市が選ばれる理由」で使う
+
+@use "../foundation/mixin" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: myrem(20);
+  color: var(--color-text-invert);
+
+  &__img {
+    width: 100%;
+    height: myrem(190.32); // カンプの値（画像の縦横比から計算すると 190.1px になる）
+    object-fit: cover;
+    border-radius: var(--radius-card);
+  }
+
+  &__title {
+    font-size: myrem(18);
+    font-weight: 700;
+    line-height: 1.6;
+
+    @include text-trim(1.6);
+  }
+
+  // カンプは 14px × 1.6 = 22.4px を 22px に丸めて行を積んでいるので 22px に固定する
+  &__text {
+    font-size: myrem(14);
+    line-height: myrem(22);
+
+    @include text-trim(1.5714); // 22 / 14
+  }
+}

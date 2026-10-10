@@ -1,0 +1,35 @@
+// Scroller
+// SP だけ横スクロールさせる入れ物。PC では通常の並びに戻る
+// スクロールバーは隠し、右端の見切れで続きがあることを示す
+// 使うとき：外側に tabindex="0" role="region" aria-label を付ける（キーボードでもスクロールできるように）
+// 間隔や余白は置く側（about__list など）で指定する
+
+@use "../foundation/mixin" as *;
+
+.scroller {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mq(md) {
+    overflow: visible;
+  }
+
+  &__list {
+    display: flex;
+    width: max-content;
+
+    @include mq(md) {
+      width: auto;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}

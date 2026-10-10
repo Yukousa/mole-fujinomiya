@@ -8,6 +8,7 @@
 
 .hero {
   position: relative;
+  background-color: var(--color-bg); // main が紺なので白を明示する
   padding-top: var(--header-height-sp);
   overflow: hidden; // SP の雲が右端からはみ出す
 

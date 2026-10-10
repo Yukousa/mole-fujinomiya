@@ -18,3 +18,12 @@ $breakpoints: (
     @content;
   }
 }
+
+// 文字の上下の余白を詰める（Figma の text-box-trim: cap alphabetic 相当）
+// Figma はこの指定で「大文字の上端〜ベースライン」を行の高さとして間隔を測っている。
+// text-box-trim は Firefox が未対応のため、負のマージンで同じ位置に合わせる。
+// 値は Noto Sans JP の寸法（ascent 1.16 / descent 0.288 / 大文字の高さ 0.733）から計算している。
+// 使い方：@include text-trim(1.6);  ※ line-height と同じ値を渡す。em 指定なので font-size が変わっても追従する
+@mixin text-trim($line-height) {
+  margin-block: calc((0.297 - #{$line-height} / 2) * 1em) calc((0.436 - #{$line-height} / 2) * 1em);
+}

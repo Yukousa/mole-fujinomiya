@@ -1,0 +1,148 @@
+// Fields（FUJINOMIYA FIVE FIELDS）
+// 紺背景。about から続く
+// SP：紹介文 → 五角形 → 5項目を縦に並べる
+// PC：紹介文と五角形を横に並べ、5項目は 3＋2 の中央寄せ。配置は 1440px のカンプの座標から割り出している
+
+@use "../foundation/mixin" as *;
+
+.fields {
+  padding: 0 myrem(24) myrem(48);
+  color: var(--color-text-invert);
+  background-color: var(--color-bg-navy);
+
+  @include mq(md) {
+    padding: 0 0 myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(32);
+
+    @include mq(md) {
+      flex-direction: row;
+      gap: myrem(54); // カンプ：五角形 x490 − 紹介文の幅 436
+      align-items: center;
+      width: myrem(860);
+      margin-left: myrem(294.25);
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(14);
+
+    @include mq(md) {
+      gap: 0;
+      width: myrem(436);
+      padding: myrem(10);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-en);
+    font-size: myrem(34);
+    font-weight: 700;
+    line-height: myrem(41); // カンプの行の高さ（34px の normal を 41px に丸めている）
+    white-space: nowrap;
+
+    @include mq(md) {
+      font-size: myrem(48);
+      line-height: myrem(58); // 同上（48px → 58px）
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-inter); // SP はカンプで Inter 指定。PC は Noto Sans JP
+    font-size: myrem(14);
+    font-weight: 700;
+    line-height: myrem(17); // カンプの行の高さ
+
+    // PC：上の英字見出しとの間隔 12px に、text-trim の上マージンを足す
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(25);
+      line-height: 1.6;
+
+      @include text-trim(1.6);
+
+      margin-top: calc(#{myrem(12)} + (0.297 - 1.6 / 2) * 1em);
+    }
+  }
+
+  &__lead {
+    font-family: var(--font-inter); // 同上
+    font-size: myrem(12);
+    line-height: 1.75;
+    opacity: 0.82;
+
+    // PC：上の見出しとの間隔 36px に、text-trim の上マージンを足す
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(16);
+      line-height: 1.6;
+      opacity: 1;
+
+      @include text-trim(1.6);
+
+      margin-top: calc(#{myrem(36)} + (0.297 - 1.6 / 2) * 1em);
+    }
+  }
+
+  // PC だけ改行する
+  &__br {
+    display: none;
+
+    @include mq(md) {
+      display: inline;
+    }
+  }
+
+  // SP のカンプ幅（390px）ではカンプどおり左寄せ。480px 以上の SP 幅（折りたたみスマホ・小型タブレット）では中央に置く
+  &__figure {
+    width: myrem(334);
+    height: myrem(319); // カンプの値（縦横比から計算すると 318.65px になる）
+
+    @include mq(sm) {
+      align-self: center;
+    }
+
+    @include mq(md) {
+      flex-shrink: 0;
+      width: myrem(370);
+      height: myrem(353);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(32);
+    padding-inline: myrem(11);
+    margin-top: myrem(32);
+    margin-bottom: 0; // ol の初期値（1em）を消す
+
+    @include mq(md) {
+      flex-flow: row wrap;
+      justify-content: center;
+      width: myrem(1024);
+      padding-inline: 0;
+      margin-top: myrem(66);
+      margin-left: myrem(212.25);
+    }
+  }
+
+  &__item {
+    @include mq(md) {
+      width: myrem(320);
+    }
+  }
+}

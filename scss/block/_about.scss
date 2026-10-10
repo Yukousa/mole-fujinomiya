@@ -1,0 +1,138 @@
+// About（富士宮市が選ばれる理由）
+// 紺背景。ヒーローの富士山の下端からそのまま続く
+// SP：左寄せの見出し＋カードの横スクロール
+// PC：中央寄せの見出し＋カード3枚。配置は 1440px のカンプの座標から割り出している
+
+@use "../foundation/mixin" as *;
+
+.about {
+  position: relative; // 上端がヒーロー（position: relative）の富士山に 4px 重なるので前面に出す
+  padding: 0 0 myrem(64) myrem(24);
+  color: var(--color-text-invert);
+  background-color: var(--color-bg-navy);
+
+  @include mq(md) {
+    padding: 0 0 myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(40);
+
+    // カンプでは富士山の下端（y975）より 4px 上から始まる
+    @include mq(md) {
+      gap: myrem(46);
+      align-items: center;
+      width: myrem(862);
+      margin-top: myrem(-4);
+      margin-left: myrem(293);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(16);
+    padding-right: myrem(24);
+
+    @include mq(md) {
+      gap: myrem(40);
+      align-items: center;
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+
+  &__eyebrow {
+    display: flex;
+    gap: myrem(8);
+    align-items: center;
+    font-size: myrem(14);
+    font-weight: 700;
+    line-height: 1.45;
+
+    @include mq(md) {
+      gap: myrem(12);
+      font-size: myrem(18);
+    }
+  }
+
+  &__eyebrow-icon {
+    flex-shrink: 0;
+    width: myrem(24);
+    height: myrem(24);
+  }
+
+  &__eyebrow-text {
+    @include mq(md) {
+      @include text-trim(1.45);
+    }
+  }
+
+  &__title {
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.45;
+    margin-top: myrem(1); // フォントの縦位置の差（ピクセル比較で 1px 上に出る）。PC は text-trim で上書き
+
+    @include mq(md) {
+      font-size: myrem(32);
+
+      @include text-trim(1.45);
+    }
+  }
+
+  &__lead {
+    font-size: myrem(14);
+    line-height: 1.75;
+    margin-top: myrem(1); // 同上
+    opacity: 0.86;
+
+    @include mq(md) {
+      font-size: myrem(18);
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 1;
+
+      @include text-trim(1.6);
+    }
+  }
+
+  // SP と PC で文言・改行が違う（先方確認待ち）
+  &__sp {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__pc {
+    display: none;
+
+    @include mq(md) {
+      display: inline;
+    }
+  }
+
+  // カードの並び。SP の横スクロールは scroller ブロック（Mix）
+  &__list {
+    gap: myrem(32);
+    padding-right: myrem(24);
+
+    @include mq(md) {
+      gap: myrem(49);
+      padding-right: 0;
+    }
+  }
+
+  &__item {
+    width: myrem(254.5);
+  }
+}

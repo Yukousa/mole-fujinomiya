@@ -10,7 +10,14 @@
 // 以降は rules/naming-*.md のフォルダ構成・記述順に従って足す
 
 // Block（1 Block = 1 ファイル。Mix で上書きされる側を先に読む）
+@use "block/main";
 @use "block/button";
 @use "block/header";
 @use "block/drawer";
 @use "block/hero";
+@use "block/scroller";
+@use "block/card";
+@use "block/about";
+@use "block/field";
+@use "block/fields";
+@use "block/gallery";

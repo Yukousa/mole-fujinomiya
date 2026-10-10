@@ -1,18 +1,27 @@
 // Header
-// 固定。hero の上に重ねるので背景は透明。スクロールしたら白背景（is-scrolled）
+// hero の上に重ねるので背景は透明。ページと一緒にスクロールする（カンプどおり固定しない）
 // SP：ロゴ＋メニューボタン／PC：ロゴ＋グローバルナビ
+//
+// 【固定ヘッダーは保留】カンプに固定の指定が無いため外している（先方確認待ち）。
+// 固定に戻す場合は、次の4か所のコメントを外す
+//   1. このファイル：position: fixed と is-scrolled
+//   2. foundation/_base.scss：[id] の scroll-margin-top
+//   3. js/main.js：initHeaderScroll() の呼び出し
+//   4. foundation/_variables.scss：--shadow-header（コメントアウトはしていない。参照が無いだけ）
 
 @use "../foundation/mixin" as *;
 
 .header {
-  position: fixed;
+  position: absolute;
+  // position: fixed;
   inset: 0 0 auto;
   z-index: var(--z-index-header);
-  transition: background-color var(--transition);
 
-  &.is-scrolled {
-    background-color: var(--color-bg);
-  }
+  // 仮：カンプに指定なし。白背景のセクションでも境目が分かるよう影を付ける（フェードなしで切り替える）
+  // &.is-scrolled {
+  //   background-color: var(--color-bg);
+  //   box-shadow: var(--shadow-header);
+  // }
 
   &__inner {
     display: flex;

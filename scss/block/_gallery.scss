@@ -1,0 +1,46 @@
+// Gallery（富士宮の風景写真）
+// 紺背景。写真5枚を横に並べる
+// SP：左端から並べて横スクロール（scroller ブロック）
+// PC：動かさない。カンプどおり左右の写真が画面の端で切れる（1440px で左に 90px はみ出す）
+
+@use "../foundation/mixin" as *;
+
+.gallery {
+  overflow-x: clip; // PC ではみ出す分でページに横スクロールを出さない
+  background-color: var(--color-bg-navy);
+
+  @include mq(md) {
+    padding-bottom: myrem(128);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  // SP は写真の大きさと間隔を画面幅に比例させ、どの幅でもカンプと同じ「2枚＋3枚目が見切れる」比率にする
+  &__list {
+    gap: myvw(12);
+
+    @include mq(md) {
+      gap: myrem(29);
+      width: max-content;
+      margin-left: myrem(-90);
+    }
+  }
+
+  &__img {
+    width: myvw(130);
+    height: myvw(231.11);
+    object-fit: cover;
+    border-radius: var(--radius);
+
+    @include mq(md) {
+      width: myrem(302.5);
+      height: myrem(537.78);
+      border-radius: var(--radius-gallery);
+    }
+  }
+}
