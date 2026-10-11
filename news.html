@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <meta name="description" content="" />
+  <link rel="canonical" href="" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- favicon -->
+  <link rel="icon" href="./favicon.ico" sizes="any" />
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+  <meta name="theme-color" content="" />
+
+  <!-- Google Fonts：Barlow 300・700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・700（和文） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" />
+
+  <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="header header--dark js-header">
+    <div class="header__inner">
+      <a class="header__brand" href="index.html">
+        <span class="header__logo">FUJINOMIYA FIVE FIELDS</span>
+        <span class="header__sub">富士宮市サテライトオフィス</span>
+      </a>
+
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a class="header__nav-link" href="index.html#about">富士宮市について</a></li>
+          <li><a class="header__nav-link" href="index.html#five-fields">FUJINOMIYA FIVE FIELDS</a></li>
+          <li><a class="header__nav-link" href="index.html#case">事例</a></li>
+          <li><a class="header__nav-link" href="index.html#news">お知らせ</a></li>
+          <li><a class="header__nav-link" href="index.html#faq">FAQ</a></li>
+        </ul>
+        <a class="header__cta button button--white" href="#contact">
+          お問い合わせ
+          <img class="button__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+        </a>
+      </nav>
+
+      <button class="header__menu js-drawer-open" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+        <img class="header__menu-icon" src="images/icon-menu.svg" alt="" width="20" height="20">
+      </button>
+    </div>
+  </header>
+
+  <!-- ドロワー（SP のみ）。カンプ無しのため仮デザイン -->
+  <div class="drawer js-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
+    <button class="drawer__close js-drawer-close" type="button" aria-label="メニューを閉じる"></button>
+    <nav aria-label="グローバルナビゲーション（SP）">
+      <ul class="drawer__list">
+        <li><a class="drawer__link js-drawer-link" href="index.html#about">富士宮市について</a></li>
+        <li><a class="drawer__link js-drawer-link" href="index.html#five-fields">FUJINOMIYA FIVE FIELDS</a></li>
+        <li><a class="drawer__link js-drawer-link" href="index.html#case">事例</a></li>
+        <li><a class="drawer__link js-drawer-link" href="index.html#news">お知らせ</a></li>
+        <li><a class="drawer__link js-drawer-link" href="index.html#faq">FAQ</a></li>
+        <li><a class="drawer__link js-drawer-link" href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="archive">
+      <div class="archive__inner">
+        <nav class="archive__breadcrumb breadcrumb" aria-label="パンくずリスト">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">TOP</a></li>
+            <li class="breadcrumb__item">
+              <img class="breadcrumb__sep" src="images/icon-chevron-right.svg" alt="" width="20" height="20">
+              <span class="breadcrumb__current" aria-current="page">NEWS</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="archive__body">
+          <h1 class="archive__title">お知らせ</h1>
+          <!-- 仮：お知らせの内容・サムネイル・リンク先はカンプのダミー。確定したら差し替える -->
+          <ul class="archive__list">
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-09-24">2026.09.24</time>
+                  <span class="news-item__heading">企業向け「富士宮フィールドツアー」を開催します</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-09-10">2026.09.10</time>
+                  <span class="news-item__heading">実証実験・地域連携プロジェクトの相談受付を開始しました</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-08-28">2026.08.28</time>
+                  <span class="news-item__heading">サテライトオフィス開設支援制度を更新しました</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-08-05">2026.08.05</time>
+                  <span class="news-item__heading">地域企業と進める食品開発プロジェクトを公開しました</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-08-05">2026.08.05</time>
+                  <span class="news-item__heading">地域企業と進める食品開発プロジェクトを公開しました</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="news-item" href="#">
+                <span class="news-item__thumb"></span>
+                <span class="news-item__copy">
+                  <time class="news-item__date" datetime="2026-07-18">2026.07.18</time>
+                  <span class="news-item__heading">首都圏企業との共創ミートアップ開催レポート</span>
+                  <span class="news-item__excerpt">これはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじですこれはじゅうもじです</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- 仮：2ページ目は未作成。リンク先は確定したら差し替える -->
+          <nav class="archive__pagination pagination" aria-label="ページ送り">
+            <ol class="pagination__list">
+              <li><span class="pagination__item pagination__item--current" aria-current="page">1</span></li>
+              <li><a class="pagination__item" href="#">2</a></li>
+              <li><a class="pagination__item" href="#" aria-label="次のページ"><img class="pagination__icon" src="images/icon-arrow-next.svg" alt="" width="28" height="28"></a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <div class="contact__box">
+          <h2 class="contact__title">サテライトオフィス・<br class="contact__br">拠点開設について相談する</h2>
+          <p class="contact__lead">お気軽にお問い合わせください。<br class="contact__br">コーディネーターがご案内します</p>
+          <!-- 仮：お問い合わせ先（フォームの URL など）が未定 -->
+          <a class="contact__button button button--large" href="#">
+            お問い合わせ
+            <img class="button__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <p class="footer__logo">FUJINOMIYA FIVE FIELDS</p>
+          <p class="footer__sub">富士宮市でのサテライトオフィス</p>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <ul class="footer__nav-list">
+            <li><a class="footer__nav-link" href="index.html#about">富士宮市について<img class="footer__nav-arrow" src="images/icon-arrow-footer.svg" alt="" width="11" height="9"></a></li>
+            <li><a class="footer__nav-link" href="index.html#five-fields"><span class="footer__nav-en" lang="en">FUJINOMIYA FIVE FIELDS</span><img class="footer__nav-arrow" src="images/icon-arrow-footer.svg" alt="" width="11" height="9"></a></li>
+            <li><a class="footer__nav-link" href="index.html#case">事例<img class="footer__nav-arrow" src="images/icon-arrow-footer.svg" alt="" width="11" height="9"></a></li>
+            <li><a class="footer__nav-link" href="index.html#news">お知らせ<img class="footer__nav-arrow" src="images/icon-arrow-footer.svg" alt="" width="11" height="9"></a></li>
+            <li><a class="footer__nav-link" href="index.html#faq">FAQ<img class="footer__nav-arrow" src="images/icon-arrow-footer.svg" alt="" width="11" height="9"></a></li>
+          </ul>
+          <a class="footer__cta button button--large button--white" href="#contact">
+            お問い合わせ
+            <img class="button__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">
+          </a>
+        </nav>
+        <p class="footer__copy">©2026 Fujinomiya Satellite Office.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

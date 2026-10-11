@@ -1,0 +1,40 @@
+// Pagination（ページ送り）
+// 60px 角の箱を並べる。現在のページは紺地に白、ほかは白地に濃い文字
+// カンプの枠線は #e0e0e0。近い --color-border（#dddddd）で代用している
+
+@use "../foundation/mixin" as *;
+
+.pagination {
+  &__list {
+    display: flex;
+    gap: myrem(10);
+    justify-content: center;
+    margin-block: 0; // ol の初期値（1em）を消す
+  }
+
+  &__item {
+    display: grid;
+    place-items: center;
+    width: myrem(60);
+    height: myrem(60);
+    font-family: var(--font-en);
+    font-size: myrem(20);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+
+  &__item--current {
+    color: var(--color-text-invert);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  &__icon {
+    width: myrem(28);
+    height: myrem(28);
+  }
+}

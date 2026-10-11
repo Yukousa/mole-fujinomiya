@@ -24,8 +24,12 @@
 @use "block/stat";
 @use "block/business";
 @use "block/possibility";
+@use "block/news-item";
 @use "block/news";
 @use "block/faq";
 @use "block/contact";
 @use "block/footer";
 @use "block/floating";
+@use "block/breadcrumb";
+@use "block/pagination";
+@use "block/archive";

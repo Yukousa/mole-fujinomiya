@@ -1,0 +1,44 @@
+// Breadcrumb（パンくずリスト）
+// 紺背景の上に置く（文字は白）。区切りは山かっこのアイコン
+
+@use "../foundation/mixin" as *;
+
+.breadcrumb {
+  &__list {
+    display: flex;
+    gap: myrem(2);
+    align-items: center;
+    margin-block: 0; // ol の初期値（1em）を消す
+    font-family: var(--font-en);
+    font-size: myrem(14);
+    line-height: myrem(20); // カンプの行の高さ（14px × 1.4 = 19.6px を 20px に丸めている）
+    color: var(--color-text-invert);
+  }
+
+  &__item {
+    display: flex;
+    gap: myrem(2);
+    align-items: center;
+  }
+
+  // 見た目の位置は変えずに、上下の余白でクリック範囲を確保する
+  &__link {
+    display: block;
+    min-width: myrem(19); // カンプの「TOP」の幅（Figma は文字の幅を整数に切り上げる。ブラウザでは 18.1px）
+    padding-block: myrem(12);
+    margin-block: myrem(-12);
+  }
+
+  // 文字だけ 1px 下げる（Barlow Condensed の文字の縦位置がカンプより 1px 上に出る。アイコンは合っている）
+  &__link,
+  &__current {
+    position: relative;
+    top: myrem(1);
+  }
+
+  &__sep {
+    flex-shrink: 0;
+    width: myrem(20);
+    height: myrem(20);
+  }
+}

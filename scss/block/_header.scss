@@ -117,4 +117,13 @@
     width: myrem(20);
     height: myrem(20);
   }
+
+  // 紺の背景のページ（お知らせ一覧など）。文字を白にする。「お問い合わせ」は button--white を併用する
+  &--dark {
+    color: var(--color-text-invert);
+  }
+
+  &--dark &__logo {
+    color: var(--color-text-invert);
+  }
 }

@@ -1,0 +1,79 @@
+// Archive（お知らせ一覧のページ）
+// 紺背景。パンくず → 見出し → お知らせ12件 → ページ送り。下に相談 CTA とフッターが続く
+// 固定していないヘッダー（position: absolute）の下から始めるので、上にヘッダーの高さを空ける
+
+@use "../foundation/mixin" as *;
+
+.archive {
+  padding: var(--header-height-sp) myrem(24) myrem(102);
+  color: var(--color-text-invert);
+
+  @include mq(md) {
+    padding: var(--header-height-pc) 0 myrem(160);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  &__breadcrumb {
+    margin-top: myrem(12);
+
+    @include mq(md) {
+      margin-top: myrem(0.6);
+      margin-left: myrem(35.22);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(36);
+    align-items: center;
+    margin-top: myrem(12);
+
+    @include mq(md) {
+      gap: myrem(60);
+      width: myrem(800);
+      margin: myrem(61.4) auto 0;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-inter); // SP はカンプで Inter 指定。PC は Noto Sans JP
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+
+    @include mq(md) {
+      font-family: var(--font-base);
+      font-size: myrem(32);
+
+      @include text-trim(1.45);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(20);
+    width: 100%;
+
+    @include mq(md) {
+      gap: myrem(28);
+      width: myrem(794);
+    }
+  }
+
+  &__pagination {
+    margin-top: myrem(-8); // ページ送りまでの間隔 28px（親の gap は 36px）
+
+    @include mq(md) {
+      margin-top: myrem(-6); // 同 54px（親の gap は 60px）
+    }
+  }
+}
