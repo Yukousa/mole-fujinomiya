@@ -1886,3 +1886,42 @@ body {
     opacity: 1;
   }
 }
+
+.floating {
+  position: fixed;
+  right: 1.71875rem;
+  bottom: 1.53125rem;
+  z-index: var(--z-index-header);
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  padding: 0.75rem 1.1875rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-primary);
+  white-space: nowrap;
+  background-color: var(--color-bg);
+  border-radius: var(--radius);
+  transition: transform var(--transition), visibility var(--transition);
+}
+@media (min-width: 768px) {
+  .floating {
+    display: none;
+  }
+}
+.floating__icon {
+  flex-shrink: 0;
+  width: 1.3125rem;
+  height: 1.3125rem;
+}
+
+.is-js .floating {
+  visibility: hidden;
+  transform: translateX(calc(100% + 1.71875rem));
+}
+
+.is-js .floating.is-visible {
+  visibility: visible;
+  transform: none;
+}

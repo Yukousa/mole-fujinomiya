@@ -9,7 +9,21 @@ document.documentElement.classList.add('is-js');
 document.addEventListener('DOMContentLoaded', () => {
   // initHeaderScroll(); // 【保留】ヘッダーを固定していないため外している（scss/block/_header.scss の冒頭を参照）
   initDrawer();
+  initFloating();
 });
+
+// 追従の相談ボタン：ヒーローが画面から外れたら出す（ヒーローより上に戻ったら隠す）
+function initFloating() {
+  const floating = document.querySelector('.js-floating');
+  const hero = document.querySelector('.js-hero');
+  if (!floating || !hero) return;
+
+  const observer = new IntersectionObserver(([entry]) => {
+    const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+    floating.classList.toggle('is-visible', passed);
+  });
+  observer.observe(hero);
+}
 
 // ヘッダー：スクロールしたら白背景にする
 function initHeaderScroll() {
