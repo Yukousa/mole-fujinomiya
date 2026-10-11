@@ -60,11 +60,10 @@ body {
 }
 
 // 固定ヘッダーの下にアンカー遷移先が潜らないようにする
-// 【保留】ヘッダーを固定していないため外している（block/_header.scss の冒頭を参照）
-// [id] {
-//   scroll-margin-top: calc(var(--header-height-sp) + 1rem);
-//
-//   @include mq(md) {
-//     scroll-margin-top: calc(var(--header-height-pc) + 1rem);
-//   }
-// }
+[id] {
+  scroll-margin-top: calc(var(--header-height-sp) + 1rem);
+
+  @include mq(md) {
+    scroll-margin-top: calc(var(--header-height-pc) + 1rem);
+  }
+}

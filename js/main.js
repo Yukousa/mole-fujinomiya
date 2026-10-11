@@ -7,7 +7,7 @@
 document.documentElement.classList.add('is-js');
 
 document.addEventListener('DOMContentLoaded', () => {
-  // initHeaderScroll(); // 【保留】ヘッダーを固定していないため外している（scss/block/_header.scss の冒頭を参照）
+  initHeaderScroll();
   initDrawer();
   initFloating();
 });

@@ -1,27 +1,21 @@
 // Header
-// hero の上に重ねるので背景は透明。ページと一緒にスクロールする（カンプどおり固定しない）
+// 画面上部に固定する（カンプのコメント「ヘッダーを追従（PC/SP）」）。
+// 最初は hero の上に重ねるので背景は透明。スクロールしたら背景を付ける（js/main.js の initHeaderScroll）
 // SP：ロゴ＋メニューボタン／PC：ロゴ＋グローバルナビ
-//
-// 【固定ヘッダーは保留】カンプに固定の指定が無いため外している（先方確認待ち）。
-// 固定に戻す場合は、次の4か所のコメントを外す
-//   1. このファイル：position: fixed と is-scrolled
-//   2. foundation/_base.scss：[id] の scroll-margin-top
-//   3. js/main.js：initHeaderScroll() の呼び出し
-//   4. foundation/_variables.scss：--shadow-header（コメントアウトはしていない。参照が無いだけ）
+// アンカーの遷移先がヘッダーの下に潜らないよう、foundation/_base.scss で [id] に scroll-margin-top を付けている
 
 @use "../foundation/mixin" as *;
 
 .header {
-  position: absolute;
-  // position: fixed;
+  position: fixed;
   inset: 0 0 auto;
   z-index: var(--z-index-header);
 
-  // 仮：カンプに指定なし。白背景のセクションでも境目が分かるよう影を付ける（フェードなしで切り替える）
-  // &.is-scrolled {
-  //   background-color: var(--color-bg);
-  //   box-shadow: var(--shadow-header);
-  // }
+  // 仮：スクロール後の見た目はカンプに指定なし。白背景のセクションでも境目が分かるよう影を付ける（フェードなしで切り替える）
+  &.is-scrolled {
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-header);
+  }
 
   &__inner {
     display: flex;
@@ -125,5 +119,10 @@
 
   &--dark &__logo {
     color: var(--color-text-invert);
+  }
+
+  // 仮：文字が白なので、スクロール後の背景はページと同じ紺にする
+  &--dark.is-scrolled {
+    background-color: var(--color-bg-navy);
   }
 }

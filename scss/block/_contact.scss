@@ -9,7 +9,7 @@
   position: relative;
   z-index: var(--z-index-base);
   padding-inline: myrem(25);
-  margin-bottom: myrem(-48.73); // フッターに重なる量（カンプ）
+  margin-bottom: myrem(-40.22); // フッターに重なる量（カンプ）
 
   @include mq(md) {
     padding-inline: 0;

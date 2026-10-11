@@ -74,12 +74,13 @@
     }
   }
 
-  // YouTube を埋め込む予定の領域（埋め込むまでは黒い四角）
+  // YouTube の埋め込み領域（読み込み中は背景の黒い四角が見える）
   // PC は 16:9。SP はカンプの高さ 196px（16:9 なら 192.4px）
   &__video {
     width: 100%;
     height: myrem(196);
     background-color: var(--color-placeholder);
+    overflow: hidden;
     border-radius: var(--radius);
 
     @include mq(md) {
@@ -87,6 +88,14 @@
       aspect-ratio: 16 / 9;
       border-radius: 0;
     }
+  }
+
+  // 角丸は親の overflow: hidden で切り抜く
+  &__video-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 
   // 数字のカード。SP は3列、PC は5列。最後の段は中央に寄せる
@@ -101,5 +110,19 @@
       gap: myrem(20);
       width: myrem(980);
     }
+  }
+
+  // カードは PC の 180px で書き出した SVG を、SP では 104px に縮めて使う
+  &__stat {
+    width: myrem(104);
+
+    @include mq(md) {
+      width: myrem(180);
+    }
+  }
+
+  &__stat-img {
+    width: 100%;
+    height: auto;
   }
 }

@@ -36,7 +36,8 @@ ol {
 }
 
 /* Scroll behavior */
-html:focus-within {
+/* :focus-within で条件を付けると、Chrome ではリンクのクリック時にスムーズにならない（移動前にフォーカスが外れる） */
+html {
   scroll-behavior: smooth;
 }
 
@@ -79,7 +80,7 @@ button {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
+  html {
     scroll-behavior: auto;
   }
   *,

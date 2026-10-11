@@ -1,6 +1,6 @@
 // Footer
-// 暗い背景。ロゴ → ナビ（SP は縦並び＋右端に→、PC は横並び）→ コピーライト
-// 上の余白には、相談 CTA の箱が重なる分（SP 48.73px / PC 193.5px）を含む
+// 暗い背景。ロゴ → ナビ（SP は縦並び＋右端に→、PC は横並び）→ 個人情報保護について → コピーライト
+// 上の余白には、相談 CTA の箱が重なる分（SP 40.22px / PC 193.5px）を含む
 // SP の「お問い合わせ」はナビの上に出す（order）。PC はナビの右端
 // PC の配置は 1440px のカンプの座標から割り出している
 
@@ -12,7 +12,7 @@
   background-color: var(--color-bg-dark);
 
   @include mq(md) {
-    padding: myrem(233.5) 0 myrem(33.4); // 下はカンプのページ下端まで
+    padding: myrem(233.5) 0 myrem(92.37); // 下はカンプのページ下端まで
   }
 
   &__inner {
@@ -157,6 +157,20 @@
   &__cta::before {
     @include mq(md) {
       display: none;
+    }
+  }
+
+  // 見た目の位置は変えずに、上下の余白でクリック範囲を確保する（行の高さ 12/14px ＋ 16px × 2）
+  // SP はナビとの間がカンプで 36px（並びの gap 34px ＋ 2px）
+  &__privacy {
+    padding-block: myrem(16);
+    margin-block: myrem(-14) myrem(-16);
+    font-size: myrem(12);
+    line-height: 1;
+
+    @include mq(md) {
+      margin-top: myrem(-16);
+      font-size: myrem(14);
     }
   }
 
