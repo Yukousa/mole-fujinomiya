@@ -73,10 +73,12 @@
   --radius-chip: 6px; // タグ（FIVE FIELDS のキーワード）
   --radius-pill: 9999px; // 丸端のラベル（FIVE FIELDS の「食」「製造」など）
   --radius-gallery: 10px; // PC の写真ギャラリー（SP は --radius）
+  --radius-media: 10px; // 記事内の画像（お知らせ詳細）
   --color-placeholder: #111111; // 仮 YouTube を埋め込むまでの領域の色
   --color-thumb-sp: #ddeaf5; // 仮 お知らせのサムネイル（画像が入るまで）SP
   --color-thumb-pc: #d9d9d9; // 仮 同 PC
   --color-overlay-light: rgb(255 255 255 / 0.1); // 紺の上に重ねる半透明の白（FAQ の答えの背景）
+  --color-bg-gray: #f5f5f5; // 仮 記事内の画像の仮置き（お知らせ詳細）
   --color-border-light: rgb(255 255 255 / 0.15); // 暗い背景の上の区切り線（SP のフッターのナビ）
   --shadow-header: 0 4px 16px rgb(0 0 0 / 0.1); // 仮 スクロール後のヘッダー（カンプに指定なし）。【保留】固定ヘッダーを外しているため今は参照なし
 }

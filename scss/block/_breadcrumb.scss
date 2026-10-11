@@ -17,8 +17,15 @@
 
   &__item {
     display: flex;
+    flex-shrink: 0;
     gap: myrem(2);
     align-items: center;
+  }
+
+  // 最後の項目（現在のページ）だけ縮めて、入りきらない分を「…」で省略する（記事のタイトルが長い場合）
+  &__item--current {
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   // 見た目の位置は変えずに、上下の余白でクリック範囲を確保する
@@ -34,6 +41,15 @@
   &__current {
     position: relative;
     top: myrem(1);
+  }
+
+  // 日本語の項目（記事のタイトル）。カンプは Noto Sans JP。1行に収め、はみ出す分は「…」にする
+  &__current--ja {
+    min-width: 0;
+    overflow: hidden;
+    font-family: var(--font-base);
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__sep {

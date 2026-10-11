@@ -1,0 +1,40 @@
+// Detail（お知らせ詳細のページ）
+// 紺背景。パンくず → 記事（article ブロック）。下に「最新のお知らせ」（news--latest）、相談 CTA、フッターが続く
+// 固定していないヘッダー（position: absolute）の下から始めるので、上にヘッダーの高さを空ける
+
+@use "../foundation/mixin" as *;
+
+.detail {
+  padding-top: var(--header-height-sp);
+
+  @include mq(md) {
+    padding-top: var(--header-height-pc);
+  }
+
+  &__inner {
+    @include mq(md) {
+      max-width: myrem(1440);
+      margin-inline: auto;
+    }
+  }
+
+  // SP はカンプで左 20px（一覧ページは 24px）
+  &__breadcrumb {
+    padding-inline: myrem(20);
+    margin-top: myrem(12);
+
+    @include mq(md) {
+      padding-inline: 0;
+      margin-top: myrem(0.6);
+      margin-left: myrem(34.84);
+    }
+  }
+
+  &__article {
+    margin-top: myrem(10);
+
+    @include mq(md) {
+      margin-top: myrem(50.4); // 記事の白い箱の上端 y181（パンくずの下端 y130.6 から）
+    }
+  }
+}

@@ -1,0 +1,165 @@
+// Article（お知らせの記事）
+// メイン画像 → 日付・タイトル → 本文（h2・h3・段落・リンク・リスト・画像・引用）
+// SP：画像は画面幅いっぱい。その下の白い箱に本文
+// PC：幅 1080px の白い箱の中に、画像（940px）と本文
+// 本文の要素にはそれぞれクラスを付ける（要素セレクタでスタイリングしないため）
+
+@use "../foundation/mixin" as *;
+
+.article {
+  color: var(--color-text-dark);
+
+  @include mq(md) {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(32);
+    width: myrem(1080);
+    padding: myrem(60) myrem(70) myrem(100);
+    margin-inline: auto;
+    background-color: var(--color-bg);
+  }
+
+  // 2:1。SP は画面幅いっぱい、PC は 940px
+  &__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(40);
+    padding: myrem(12) myrem(20) myrem(100);
+    background-color: var(--color-bg);
+
+    @include mq(md) {
+      gap: myrem(48);
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(10);
+
+    @include mq(md) {
+      padding-inline: myrem(5);
+    }
+  }
+
+  &__date {
+    font-family: var(--font-en);
+    font-size: myrem(14);
+    line-height: 1.4;
+  }
+
+  &__title {
+    font-size: myrem(24);
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include mq(md) {
+      font-size: myrem(32);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: myrem(28);
+
+    @include mq(md) {
+      gap: myrem(32);
+    }
+  }
+
+  // 2つ目以降の h2 は、上に 40px の余白を足す（カンプ）
+  &__h2 {
+    font-size: myrem(20);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-bg-navy);
+
+    @include mq(md) {
+      padding-inline: myrem(5);
+      font-size: myrem(26);
+    }
+  }
+
+  &__h2:not(:first-child) {
+    padding-top: myrem(40);
+  }
+
+  &__h3 {
+    padding-block: myrem(20);
+    font-size: myrem(20);
+    font-weight: 700;
+    line-height: 1.4;
+    border-block: 1px solid currentColor;
+
+    @include mq(md) {
+      padding-inline: myrem(5);
+    }
+  }
+
+  &__p,
+  &__list,
+  &__quote {
+    font-size: myrem(16);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  &__link {
+    color: var(--color-bg-navy);
+    text-decoration: underline;
+  }
+
+  // リセットで消えているマーカーと字下げを戻す。入れ子は 24px ずつ下げる
+  &__list {
+    padding-left: myrem(24);
+    margin: 0;
+    list-style: disc;
+  }
+
+  &__list--ol {
+    list-style: decimal;
+  }
+
+  &__sublist {
+    padding-left: myrem(24);
+    margin: 0;
+    list-style: disc;
+  }
+
+  &__sublist--ol {
+    list-style: lower-alpha;
+  }
+
+  // 画像の仮置き（記事内の画像が決まったら img に差し替える）
+  &__figure {
+    display: grid;
+    place-items: center;
+    height: myrem(220);
+    margin: 0;
+    font-size: myrem(24);
+    font-weight: 500;
+    line-height: 1;
+    background-color: var(--color-bg-gray);
+    border-radius: var(--radius-media);
+
+    @include mq(md) {
+      height: myrem(570);
+    }
+  }
+
+  &__quote {
+    padding-left: myrem(12);
+    margin: 0;
+    border-left: 6px solid var(--color-border);
+  }
+}

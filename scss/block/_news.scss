@@ -72,4 +72,19 @@
       width: myrem(794);
     }
   }
+
+  // お知らせ詳細の「最新のお知らせ」。余白と PC の横位置だけ変える（PC はページ中央）
+  &--latest {
+    padding: myrem(32) myrem(24) myrem(102);
+
+    @include mq(md) {
+      padding: myrem(89) 0 myrem(146.3);
+    }
+  }
+
+  &--latest &__content {
+    @include mq(md) {
+      margin-left: myrem(320);
+    }
+  }
 }
