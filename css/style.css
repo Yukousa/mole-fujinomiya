@@ -3,34 +3,30 @@
   --color-primary: #00206b;
   --color-accent: #ff6a00;
   --color-text: #333333;
-  --color-text-muted: #777777;
   --color-text-invert: #ffffff;
   --color-text-dark: #1a1a1a;
   --color-bg: #ffffff;
   --color-bg-subtle: #e3e8f5;
   --color-bg-navy: #08348a;
+  --color-bg-navy-sp: #063886;
+  --color-text-navy-sp: #083f96;
   --color-bg-dark: #222222;
   --color-border: #dddddd;
+  --color-border-pagination: #e0e0e0;
   --font-base: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
     "Yu Gothic", "Meiryo", sans-serif;
-  --font-heading: var(--font-base);
   --font-en: "Barlow Condensed", sans-serif;
   --font-en-wide: "Barlow", sans-serif;
   --font-label: "Hiragino Kaku Gothic Pro", "Hiragino Sans", var(--font-base);
   --font-inter: "Inter", var(--font-base);
   --font-mark: Arial, "Helvetica Neue", sans-serif;
-  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-size-base: 1rem;
   --line-height-base: 1.8;
-  --line-height-heading: 1.4;
-  --container-width: 75rem;
   --container-padding-sp: 1rem;
   --container-padding-pc-left: 2.125rem;
   --container-padding-pc-right: 2.5rem;
   --header-height-sp: 4.25rem;
   --header-height-pc: 6.875rem;
-  --spacing-section-sp: 4rem;
-  --spacing-section-pc: 6rem;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -185,17 +181,6 @@ body {
     opacity: 0.7;
   }
 }
-.inner {
-  max-width: var(--container-width);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-sp);
-}
-@media (min-width: 768px) {
-  .inner {
-    padding-inline: var(--container-padding-pc-left) var(--container-padding-pc-right);
-  }
-}
-
 [id] {
   scroll-margin-top: calc(var(--header-height-sp) + 1rem);
 }
@@ -726,11 +711,12 @@ body {
   position: relative;
   padding: 0 0 4rem 1.5rem;
   color: var(--color-text-invert);
-  background-color: var(--color-bg-navy);
+  background-color: var(--color-bg-navy-sp);
 }
 @media (min-width: 768px) {
   .about {
     padding: 0 0 8rem;
+    background-color: var(--color-bg-navy);
   }
 }
 @media (min-width: 768px) {
@@ -1262,10 +1248,11 @@ body {
 .possibility__lead {
   font-size: 0.75rem;
   line-height: 1.7;
-  color: var(--color-bg-navy);
+  color: var(--color-text-navy-sp);
 }
 @media (min-width: 768px) {
   .possibility__lead {
+    color: var(--color-bg-navy);
     font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.6;
@@ -1669,10 +1656,11 @@ body {
 .contact__lead {
   font-size: 0.75rem;
   line-height: 1.7;
-  color: var(--color-bg-navy);
+  color: var(--color-text-navy-sp);
 }
 @media (min-width: 768px) {
   .contact__lead {
+    color: var(--color-bg-navy);
     font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.6;
@@ -1963,7 +1951,7 @@ body {
   line-height: 1;
   color: var(--color-text-dark);
   background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-pagination);
   border-radius: var(--radius-card);
 }
 .pagination__item--current {

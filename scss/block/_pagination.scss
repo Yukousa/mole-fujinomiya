@@ -1,6 +1,5 @@
 // Pagination（ページ送り）
 // 60px 角の箱を並べる。現在のページは紺地に白、ほかは白地に濃い文字
-// カンプの枠線は #e0e0e0。近い --color-border（#dddddd）で代用している
 
 @use "../foundation/mixin" as *;
 
@@ -23,7 +22,7 @@
     line-height: 1;
     color: var(--color-text-dark);
     background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-pagination);
     border-radius: var(--radius-card);
   }
 

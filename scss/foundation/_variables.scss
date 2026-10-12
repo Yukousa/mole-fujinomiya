@@ -11,34 +11,32 @@
   --color-accent: #ff6a00; // 最重要1〜2箇所のみ
 
   --color-text: #333333;
-  --color-text-muted: #777777; // 仮
   --color-text-invert: #ffffff;
   --color-text-dark: #1a1a1a; // 白地の上の濃い文字（ページ送り）
 
   --color-bg: #ffffff;
   --color-bg-subtle: #e3e8f5;
   --color-bg-navy: #08348a; // 紺のセクション背景（富士山の画像の下端と同じ色）
+  --color-bg-navy-sp: #063886; // SP の about の背景（カンプどおり PC と別の紺）
+  --color-text-navy-sp: #083f96; // SP の紹介文（possibility・contact）。PC は --color-bg-navy
   --color-bg-dark: #222222; // フッターの背景
   --color-border: #dddddd;
+  --color-border-pagination: #e0e0e0; // ページ送りの枠線（カンプどおり --color-border と別の色）
 
   // フォント
   // 和文。Figma の「Noto Sans CJK JP」は Google Fonts の Noto Sans JP と同じ書体
   --font-base: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
     "Yu Gothic", "Meiryo", sans-serif;
-  --font-heading: var(--font-base); // 仮
   --font-en: "Barlow Condensed", sans-serif; // 英字（ロゴ・日付など）。400 / 700 を読み込み
   --font-en-wide: "Barlow", sans-serif; // 英字・数字（FIVE FIELDS の番号・フィールド名、PC のお知らせの日付）。300 / 700 を読み込み
   --font-label: "Hiragino Kaku Gothic Pro", "Hiragino Sans", var(--font-base); // FIVE FIELDS のラベル。カンプは Hiragino W6。Mac・iOS 以外は Noto Sans JP で表示
   --font-inter: "Inter", var(--font-base); // 英字は Inter、日本語は Noto Sans JP（カンプで Inter 指定の箇所。Inter に日本語が無いため）
   --font-mark: Arial, "Helvetica Neue", sans-serif; // FAQ の「Q」（カンプは Arial Bold）
-  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif; // 仮
 
   --font-size-base: 1rem; // rem にしておく。px だと _base.scss の vw スケーリングが効かない
-  --line-height-base: 1.8; // 仮
-  --line-height-heading: 1.4; // 仮
+  --line-height-base: 1.8;
 
   // レイアウト（rem で書く。px だと vw スケーリングで文字だけ縮み、幅や余白が縮まない）
-  --container-width: 75rem; // 仮 1200px
   --container-padding-sp: 1rem; // 16px
   --container-padding-pc-left: 2.125rem; // 34px カンプで左右が異なる
   --container-padding-pc-right: 2.5rem; // 40px
@@ -47,9 +45,6 @@
   --header-height-pc: 6.875rem; // 110px（PC はフレームが無いため、要素の上余白21px を下にも取って算出）
 
   // 余白
-  --spacing-section-sp: 4rem; // 仮 64px
-  --spacing-section-pc: 6rem; // 仮 96px
-
   --space-1: 0.5rem; // 8px
   --space-2: 1rem; // 16px
   --space-3: 1.5rem; // 24px
@@ -65,7 +60,7 @@
 
   // その他
   --radius: 4px;
-  --transition: 0.3s ease-out; // 仮
+  --transition: 0.3s ease-out;
 
   // 案件追加（この案件だけで使うトークン）
   --radius-tag: 2px; // タグ（ヒーローの「新規事業に取り組む企業へ」など）

@@ -9,10 +9,11 @@
   position: relative; // 上端がヒーロー（position: relative）の富士山に 4px 重なるので前面に出す
   padding: 0 0 myrem(64) myrem(24);
   color: var(--color-text-invert);
-  background-color: var(--color-bg-navy);
+  background-color: var(--color-bg-navy-sp);
 
   @include mq(md) {
     padding: 0 0 myrem(128);
+    background-color: var(--color-bg-navy);
   }
 
   &__inner {

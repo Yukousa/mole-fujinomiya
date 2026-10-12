@@ -46,19 +46,6 @@ body {
   }
 }
 
-// インナー幅（共通ラッパー）
-// 1440px時の視覚的な左右ガター120pxは、inner(1200px)を中央寄せすることで自動的に生成される。
-// 全体を1440pxで固定したい場合のみ、最上位ラッパーに max-width:1440px を付与する。
-.inner {
-  max-width: var(--container-width);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-sp);
-
-  @include mq(md) {
-    padding-inline: var(--container-padding-pc-left) var(--container-padding-pc-right);
-  }
-}
-
 // 固定ヘッダーの下にアンカー遷移先が潜らないようにする
 [id] {
   scroll-margin-top: calc(var(--header-height-sp) + 1rem);
