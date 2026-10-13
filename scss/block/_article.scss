@@ -150,7 +150,7 @@
     padding-left: var(--marker-shift);
   }
 
-  // 画像の仮置き（記事内の画像が決まったら img に差し替える）
+  // 記事内の画像の場所（カンプは「画像」と書かれた四角）
   &__figure {
     display: grid;
     place-items: center;

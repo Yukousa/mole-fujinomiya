@@ -221,6 +221,16 @@ document.documentElement.classList.add('is-js');
 - ブラウザでの表示確認が必要。構文エラーがないことは確認したことにならない
 - 表示確認は依頼者が行う。確認してほしい項目を具体的に伝えること
 
+## 制作メモはコードに書かない
+
+納品するファイル（HTML・JS・`css/style.css`）には、制作メモを書かない。
+「〇〇待ち」「確認中」「仮の理由」などの状況や、制作上の注意（ビルドの方法など）は
+`作業メモ.md` にまとめて記録する。納品後の扱いは先方が決めるので、制作者向けの説明も残さない。
+
+- 書いてよいのは、コードの構造を示す本来のコメント（セクションの区切り、head の「Google Fonts」「OGP」、JS の関数の役割など）
+- 納品しないファイル（`scss/` など）には、実装の理由の説明を書いてよい。Sass は `//` で書く（`/* */` は `css/style.css` に出力される）
+- 例外：段階提出の `HIDDEN:` コメントと、トークンの `// 仮` の目印。どちらも納品前に消える
+
 ## 未確定セクションの一時非表示（段階提出）
 
 確定セクションだけを提出する場合、`hidden` 属性や CSS では隠しきれない
@@ -252,6 +262,7 @@ HIDDEN:feature -->
 - [ ] `h1` が1つあるか、見出し階層が飛んでいないか
 - [ ] `console.log` の消し忘れ
 - [ ] `HIDDEN:` コメントの残り
+- [ ] 納品ファイル（HTML・JS・`css/style.css`）に制作メモのコメントが残っていないか
 - [ ] lorem ipsum、テスト用の電話番号・メールアドレスの残り
 - [ ] `index.html` / `css/` / `scss/` / `src/` に `仮` の目印が残っていないか
 - [ ] `presets/` が残っていないか
@@ -263,7 +274,7 @@ HIDDEN:feature -->
 
 - 渡す：`index.html`、`css/`、`js/`、`images/`（`images/_src/` を除く）、favicon
 - 渡さない：`CLAUDE.md`、`rules/`、`scripts/`、`サイト情報.md`、`README.md`、`scss/`・`src/`、
-  `package.json`・`package-lock.json`、`node_modules/`、`.claude/`、`.vscode/`、`.git*`
+  `package.json`・`package-lock.json`、`node_modules/`、`.claude/`、`.vscode/`、`.git*`、`作業メモ.md`
 
 ## 依頼者に確認してもらうこと
 

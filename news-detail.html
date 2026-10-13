@@ -20,17 +20,18 @@
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
   <meta name="theme-color" content="">
 
-  <!-- Google Fonts：Barlow 300・700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・500・700（和文） -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
 
-  <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- ヘッダー -->
   <header class="header header--dark js-header">
     <div class="header__inner">
       <a class="header__brand" href="index.html">
@@ -58,7 +59,7 @@
     </div>
   </header>
 
-  <!-- ドロワー（SP のみ）。カンプ無しのため仮デザイン -->
+  <!-- ドロワー（SP のみ） -->
   <div class="drawer js-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
     <button class="drawer__close js-drawer-close" type="button" aria-label="メニューを閉じる"></button>
     <nav aria-label="グローバルナビゲーション（SP）">
@@ -74,8 +75,10 @@
   </div>
 
   <main class="main">
+    <!-- お知らせ詳細 -->
     <div class="detail">
       <div class="detail__inner">
+        <!-- パンくずリスト -->
         <nav class="detail__breadcrumb breadcrumb" aria-label="パンくずリスト">
           <ol class="breadcrumb__list">
             <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">TOP</a></li>
@@ -90,7 +93,7 @@
           </ol>
         </nav>
 
-        <!-- 仮：記事の内容はカンプのダミー -->
+        <!-- 記事 -->
         <article class="detail__article article">
           <img class="article__img" src="images/news-pc.webp" srcset="images/news-sp.webp 780w, images/news-pc.webp 1880w" sizes="(min-width: 768px) 940px, 100vw" alt="静岡のローカルコミュニティとゆる〜くつながる交流会 in TOKYO　2026年1月24日（土）14:00-16:30　会場：パティア市ヶ谷" width="1880" height="940">
           <div class="article__content">
@@ -137,12 +140,12 @@
       </div>
     </div>
 
+    <!-- 最新のお知らせ -->
     <section class="news news--latest">
       <div class="news__inner">
         <div class="news__content">
           <h2 class="news__title">最新のお知らせ</h2>
           <div class="news__body">
-            <!-- 仮：お知らせの内容・サムネイル・リンク先はダミー -->
             <ul class="news__list">
               <li>
                 <a class="news-item" href="news-detail.html">
@@ -184,6 +187,7 @@
       </div>
     </section>
 
+    <!-- 相談 -->
     <section class="contact" id="contact">
       <div class="contact__inner">
         <div class="contact__box">
@@ -198,6 +202,7 @@
     </section>
   </main>
 
+  <!-- フッター -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__content">

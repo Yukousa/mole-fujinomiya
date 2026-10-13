@@ -20,17 +20,18 @@
   <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
   <meta name="theme-color" content="">
 
-  <!-- Google Fonts：Barlow 300・700・Barlow Condensed 400・700・Inter 400・700（英字）／ Noto Sans JP 300・400・500・700（和文） -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Inter:wght@400;700&family=Barlow+Condensed:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
 
-  <!-- CSS（scss/style.scss からビルドしたもの。直接編集しない） -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- ヘッダー -->
   <header class="header js-header">
     <div class="header__inner">
       <a class="header__brand" href="./">
@@ -58,7 +59,7 @@
     </div>
   </header>
 
-  <!-- ドロワー（SP のみ）。カンプ無しのため仮デザイン -->
+  <!-- ドロワー（SP のみ） -->
   <div class="drawer js-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
     <button class="drawer__close js-drawer-close" type="button" aria-label="メニューを閉じる"></button>
     <nav aria-label="グローバルナビゲーション（SP）">
@@ -74,6 +75,7 @@
   </div>
 
   <main class="main">
+    <!-- メインビジュアル -->
     <section class="hero js-hero">
       <div class="hero__main">
         <picture class="hero__visual">
@@ -119,6 +121,7 @@
       </picture>
     </section>
 
+    <!-- 富士宮市が選ばれる理由 -->
     <section class="about" id="about">
       <div class="about__inner">
         <div class="about__body">
@@ -127,7 +130,6 @@
               <img class="about__eyebrow-icon" src="images/icon-circle-question-mark.svg" alt="" width="24" height="24">
               <span class="about__eyebrow-text">富士宮市が選ばれる理由</span>
             </p>
-            <!-- SP と PC で文言が違う（SP は「。」あり・PC は改行）。先方確認待ち -->
             <h2 class="about__title">東京から約2時間<span class="about__sp">。</span><br class="about__pc">富士山の<br class="about__sp">麓に広がるビジネスフィールド</h2>
             <p class="about__lead">富士山の水や自然、農業・酪農、製造業、観光など、地域にあるさまざまな資源が、<br class="about__pc">新しいビジネスの土台になっています。</p>
           </div>
@@ -155,6 +157,7 @@
       </div>
     </section>
 
+    <!-- FUJINOMIYA FIVE FIELDS -->
     <section class="fields" id="five-fields">
       <div class="fields__inner">
         <div class="fields__top">
@@ -240,7 +243,7 @@
       </div>
     </section>
 
-    <!-- 動きの仕様は先方確認中。SP は横スクロール、PC は静止（about のカードと同じ） -->
+    <!-- 富士宮の風景 -->
     <section class="gallery" aria-label="富士宮の風景">
       <div class="gallery__inner">
         <div class="scroller" tabindex="0" role="region" aria-label="富士宮の風景写真（横にスクロールできます）">
@@ -255,6 +258,7 @@
       </div>
     </section>
 
+    <!-- 富士宮のビジネス環境 -->
     <section class="business" id="business">
       <div class="business__inner">
         <div class="business__body">
@@ -263,12 +267,10 @@
             <p class="business__lead">自然、農業・酪農、製造業、観光など、富士宮の地域資源や産業を紹介。<br>新しい事業や実証につながる環境をご覧いただけます。</p>
           </div>
 
-          <!-- 仮：動画は 10/23 に最終納品。届いたら src の動画 ID（embed/ の後ろ）を差し替える -->
           <div class="business__video">
             <iframe class="business__video-frame" src="https://www.youtube.com/embed/2PtM_WZ6eDQ" title="富士宮のビジネス環境（YouTube 動画）" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
 
-          <!-- 数値のカードは SVG 画像（PC・SP 共通。カンプのコメントの指定）。数値が変わったら SVG を差し替え、alt も直す -->
           <ul class="business__stats">
             <li class="business__stat"><img class="business__stat-img" src="images/stat-birth.svg" alt="出生：1日に1.41人（令和6年度）" width="180" height="180" loading="lazy"></li>
             <li class="business__stat"><img class="business__stat-img" src="images/stat-death.svg" alt="死亡：1日に4.72人（令和6年度）" width="180" height="180" loading="lazy"></li>
@@ -288,6 +290,7 @@
         </div>
       </div>
     </section>
+    <!-- 富士宮で出来ること -->
     <section class="possibility" id="case">
       <div class="possibility__inner">
         <div class="possibility__box">
@@ -309,12 +312,12 @@
       </div>
     </section>
 
+    <!-- お知らせ -->
     <section class="news" id="news">
       <div class="news__inner">
         <div class="news__content">
           <h2 class="news__title">お知らせ</h2>
           <div class="news__body">
-            <!-- 仮：お知らせの内容・サムネイル・各お知らせのリンク先はカンプのダミー。確定したら差し替える -->
             <ul class="news__list">
               <li>
                 <a class="news-item" href="news-detail.html">
@@ -376,11 +379,11 @@
       </div>
     </section>
 
+    <!-- よくある質問 -->
     <section class="faq" id="faq">
       <div class="faq__inner">
         <div class="faq__content">
           <h2 class="faq__title">よくある質問</h2>
-          <!-- 初期状態はすべて開いている（open 属性）。閉じた状態にするかは先方確認中 -->
           <div class="faq__list">
             <details class="faq__item" open>
               <summary class="faq__question">
@@ -459,6 +462,7 @@
       </div>
     </section>
 
+    <!-- 相談 -->
     <section class="contact" id="contact">
       <div class="contact__inner">
         <div class="contact__box">
@@ -473,6 +477,7 @@
     </section>
   </main>
 
+  <!-- フッター -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__content">
@@ -499,7 +504,7 @@
     </div>
   </footer>
 
-  <!-- 追従の相談ボタン（SP のみ）。ヒーローを過ぎたら右から出てくる -->
+  <!-- 追従の相談ボタン（SP のみ） -->
   <a class="floating js-floating" href="https://logoform.jp/form/GgrE/1825758">
     担当に相談する
     <img class="floating__icon" src="images/arrow-right-orange.svg" alt="" width="21" height="21">

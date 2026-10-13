@@ -11,7 +11,7 @@
   inset: 0 0 auto;
   z-index: var(--z-index-header);
 
-  // 仮：スクロール後の見た目はカンプに指定なし。白背景のセクションでも境目が分かるよう影を付ける（フェードなしで切り替える）
+  // スクロール後は白背景＋影。白背景のセクションでも境目が分かるようにする（フェードなしで切り替える）
   &.is-scrolled {
     background-color: var(--color-bg);
     box-shadow: var(--shadow-header);
@@ -121,7 +121,7 @@
     color: var(--color-text-invert);
   }
 
-  // 仮：文字が白なので、スクロール後の背景はページと同じ紺にする
+  // 文字が白なので、スクロール後の背景はページと同じ紺にする
   &--dark.is-scrolled {
     background-color: var(--color-bg-navy);
   }

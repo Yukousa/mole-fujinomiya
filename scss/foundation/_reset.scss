@@ -1,9 +1,6 @@
-/*****************************
- * Reset CSS
- * Based on: A Modern CSS Reset (https://github.com/hankchizljaw/modern-css-reset)
- * ⚠️ このファイルは案件をまたいで使い回す。原則触らない。
- * （v2：内容の変更なし。ファイルセット完全性のため同梱）
- *****************************/
+/* Reset CSS – Based on: A Modern CSS Reset (https://github.com/hankchizljaw/modern-css-reset) */
+// ⚠️ このファイルは案件をまたいで使い回す。原則触らない。
+// （v2：内容の変更なし。ファイルセット完全性のため同梱）
 
 /* Box sizing */
 *,
@@ -36,7 +33,7 @@ ol {
 }
 
 /* Scroll behavior */
-/* :focus-within で条件を付けると、Chrome ではリンクのクリック時にスムーズにならない（移動前にフォーカスが外れる） */
+// :focus-within で条件を付けると、Chrome ではリンクのクリック時にスムーズにならない（移動前にフォーカスが外れる）
 html {
   scroll-behavior: smooth;
 }

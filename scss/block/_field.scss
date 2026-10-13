@@ -1,7 +1,7 @@
 // Field（FIVE FIELDS の1項目）
 // 番号＋フィールド名＋ラベル、本文、キーワードのタグ。紺背景の上に置く（文字は白）
 // ラベルはカンプどおり Hiragino Kaku Gothic Pro（--font-label。Mac・iOS 以外は Noto Sans JP）。
-// タグはカンプどおり Inter。日本語は Noto Sans JP で表示される（--font-inter。Inter に日本語が無い件は先方確認中）
+// タグはカンプどおり Inter。日本語は Noto Sans JP で表示される（--font-inter）
 
 @use "../foundation/mixin" as *;
 

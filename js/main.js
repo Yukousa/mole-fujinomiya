@@ -1,9 +1,3 @@
-/*****************************
- * Main JS
- * - バニラJS。必要最小限にとどめる
- * - DOM取得は js- フックを使い、状態は is- クラスの付け外しで切り替える
- *****************************/
-
 document.documentElement.classList.add('is-js');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +19,7 @@ function initFloating() {
   observer.observe(hero);
 }
 
-// ヘッダー：スクロールしたら白背景にする
+// ヘッダー：スクロールしたら背景を付ける
 function initHeaderScroll() {
   const header = document.querySelector('.js-header');
   if (!header) return;
