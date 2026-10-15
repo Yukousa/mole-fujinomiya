@@ -6,17 +6,29 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloating();
 });
 
-// 追従の相談ボタン：ヒーローが画面から外れたら出す（ヒーローより上に戻ったら隠す）
+// 追従の相談ボタン：ヒーローを過ぎたら出し、相談エリアに着いたら隠す（相談エリアより下でも隠したまま）
 function initFloating() {
   const floating = document.querySelector('.js-floating');
   const hero = document.querySelector('.js-hero');
-  if (!floating || !hero) return;
+  const end = document.querySelector('.js-floating-end');
+  if (!floating || !hero || !end) return;
 
-  const observer = new IntersectionObserver(([entry]) => {
-    const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-    floating.classList.toggle('is-visible', passed);
-  });
-  observer.observe(hero);
+  let passedHero = false;
+  let reachedEnd = false;
+
+  const update = () => {
+    floating.classList.toggle('is-visible', passedHero && !reachedEnd);
+  };
+
+  new IntersectionObserver(([entry]) => {
+    passedHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+    update();
+  }).observe(hero);
+
+  new IntersectionObserver(([entry]) => {
+    reachedEnd = entry.isIntersecting || entry.boundingClientRect.top < 0;
+    update();
+  }).observe(end);
 }
 
 // ヘッダー：スクロールしたら背景を付ける

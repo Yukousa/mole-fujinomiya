@@ -1,6 +1,7 @@
 // Drawer（SP のみ）
-// 紺背景・白文字・ナビを中央に配置・右からスライドイン
-// 開閉は js/main.js で is-open を付け外しする
+// 白背景。上に MENU と CLOSE、ナビの行（区切り線＋オレンジの矢印）、下に紺の「お問い合わせ」ボタン
+// 右からスライドイン。開閉は js/main.js で is-open を付け外しする
+// 寸法は依頼者が作ったデザイン（倍率 1.5 のスクリーンショット）を 390px 幅に換算したもの
 
 @use "../foundation/mixin" as *;
 
@@ -8,11 +9,13 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-index-drawer);
-  display: grid;
-  place-items: center;
-  color: var(--color-text-invert);
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--container-padding-sp) myrem(16);
+  overflow-y: auto;
+  color: var(--color-primary);
   visibility: hidden;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   transform: translateX(100%);
   transition:
     transform var(--transition),
@@ -23,55 +26,109 @@
     transform: none;
   }
 
-  // ヘッダーのメニューボタンと同じ位置に置く
-  &__close {
-    position: absolute;
-    top: myrem(12);
-    right: var(--container-padding-sp);
-    width: myrem(44);
-    height: myrem(44);
-    color: var(--color-text-invert); // button は親の color を継承しないので明示する
+  @include mq(md) {
+    display: none;
+  }
 
-    // × の2本線（カンプに閉じるアイコンが無いため CSS で描く）
+  &__bar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: myrem(44);
+    margin-top: myrem(34);
+  }
+
+  &__label {
+    font-family: var(--font-en-wide);
+    font-size: myrem(14);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.3em;
+  }
+
+  // クリック範囲 44px を確保し、見た目の右端は区切り線の右端にそろえる
+  &__close {
+    display: flex;
+    gap: myrem(10);
+    align-items: center;
+    height: myrem(44);
+    padding-left: myrem(12);
+    font-family: var(--font-inter);
+    font-size: myrem(11);
+    line-height: 1;
+    color: var(--color-primary); // button は親の color を継承しないので明示する
+    letter-spacing: 0.08em;
+  }
+
+  // × の2本線
+  &__close-icon {
+    position: relative;
+    width: myrem(10);
+    height: myrem(10);
+
     &::before,
     &::after {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: myrem(20);
-      height: 2px;
+      width: myrem(13);
+      height: 1px;
       content: "";
       background-color: currentColor;
-      border-radius: 1px;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 
-  &__close::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &__close::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
-  // 項目の見た目の間隔は 32px。うち 22px（上下 11px ずつ）をリンクの padding に回してクリック範囲を確保する
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: myrem(10);
-    align-items: center;
+  &__nav {
+    margin-block: myrem(31) myrem(40); // 下はボタンとの最小の間隔
   }
 
   &__link {
-    display: block;
-    padding: myrem(11) myrem(16);
+    display: flex;
+    gap: myrem(16);
+    align-items: center;
+    justify-content: space-between;
+    height: myrem(64); // 区切り線 1px を含む
     font-size: myrem(16);
     font-weight: 700;
     line-height: 1.4;
+    border-bottom: 1px solid var(--color-bg-subtle);
   }
 
-  @include mq(md) {
-    display: none;
+  &__arrow {
+    flex-shrink: 0;
+    width: myrem(22);
+    height: myrem(14);
+  }
+
+  // 画面の下に置く（項目が多くて入りきらないときは、ナビの後ろに続けてスクロール）
+  &__cta {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: myrem(62);
+    padding-inline: myrem(22);
+    margin-top: auto;
+    font-size: myrem(18);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-text-invert);
+    background-color: var(--color-primary);
+    border-radius: var(--radius);
+  }
+
+  &__cta-icon {
+    width: myrem(26);
+    height: myrem(26);
   }
 }
 

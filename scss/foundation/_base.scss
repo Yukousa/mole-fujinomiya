@@ -13,6 +13,7 @@
 //   ※範囲指定と max-width が要るので、ここだけ mq() を使わず @media を直接書く
 html {
   font-size: 100%;
+  -webkit-tap-highlight-color: transparent; // タップした瞬間に出る薄い色の四角を消す（スマホ）
 }
 @media (max-width: 390px) {
   html {
