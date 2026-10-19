@@ -38,7 +38,7 @@
 
   // レイアウト（rem で書く。px だと vw スケーリングで文字だけ縮み、幅や余白が縮まない）
   --container-padding-sp: 1rem; // 16px
-  --container-padding-pc-left: 2.125rem; // 34px カンプで左右が異なる
+  --container-padding-pc-left: 2.1325rem; // 34.12px カンプで左右が異なる
   --container-padding-pc-right: 2.5rem; // 40px
 
   --header-height-sp: 4.25rem; // 68px
