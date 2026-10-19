@@ -87,7 +87,7 @@
     color: var(--color-primary);
 
     @include mq(md) {
-      margin-top: myrem(-22); // カンプは文字の上下の余白を詰めて（text-box-trim）間隔を測っているので、その分を引く
+      margin-top: myrem(-25); // カンプは文字の上下の余白を詰めて（text-box-trim）間隔を測っているので、その分を引く（ピクセル比較で調整）
       font-size: myrem(49);
       line-height: 1.35;
     }
@@ -100,7 +100,7 @@
     @include mq(md) {
       font-size: myrem(18);
       line-height: 1.5;
-      margin-top: myrem(-22); // 同上
+      margin-top: myrem(-20); // 同上。見出しを 2px 上げた分を戻して、本文から下の位置は変えない
     }
   }
 
