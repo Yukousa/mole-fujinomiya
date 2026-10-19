@@ -1,8 +1,8 @@
 // Hero
 // 固定ヘッダーの下に潜る分を padding-top で空ける
 // SP：コラージュ → コピー → 富士山
-// PC：左にコピー、右にコラージュ（1枚画像）、下に富士山。PC の配置は 1440px のカンプの座標から割り出している
-//     （上端の基準はヘッダー下端 = y110）
+// PC：左にコピー、右にコラージュ（1枚画像）、下に富士山
+//     配置は 1440px のカンプの座標から割り出す（上端の基準はヘッダー下端 = y110）
 
 @use "../foundation/mixin" as *;
 
@@ -43,8 +43,7 @@
     height: auto;
   }
 
-  // 子の装飾（z-index: -1）をこの中に閉じ込めるため z-index を指定する
-  // 1 にして、後ろに書いている PC の雲（absolute）より前に出す
+  // 子の装飾（z-index: -1）をこの中に閉じ込め、後ろに書いた PC の雲より前に出す
   &__copy {
     position: relative;
     z-index: 1;
@@ -52,7 +51,7 @@
     flex-direction: column;
     gap: myrem(9);
     padding: myrem(16) myrem(32) myrem(36);
-    margin-top: myrem(-12); // カンプでコラージュに 12px 重なっている
+    margin-top: myrem(-12); // コラージュに 12px 重ねる
 
     @include mq(md) {
       gap: myrem(38);
@@ -72,7 +71,7 @@
     background-color: var(--color-accent);
     border-radius: var(--radius-tag);
 
-    // Figma の文字の高さ（上下を詰めた状態の 13px）を行の高さにして、パディング 9px でカンプの高さ 31px にする
+    // text-trim した文字の高さ 13px を行の高さにし、パディング 9px で高さ 31px にする
     @include mq(md) {
       padding: myrem(9) myrem(8);
       font-size: myrem(18);
@@ -88,7 +87,7 @@
     color: var(--color-primary);
 
     @include mq(md) {
-      margin-top: myrem(-25); // カンプは文字の上下の余白を詰めて（text-box-trim）間隔を測っているので、その分を引く（ピクセル比較で調整）
+      margin-top: myrem(-25); // カンプは text-box-trim した状態で間隔を測っているので、その分を引く
       font-size: myrem(49);
       line-height: 1.35;
     }
@@ -101,7 +100,7 @@
     @include mq(md) {
       font-size: myrem(18);
       line-height: 1.5;
-      margin-top: myrem(-20); // 同上。見出しを 2px 上げた分を戻して、本文から下の位置は変えない
+      margin-top: myrem(-20); // 同上。見出しを上げた分を戻し、本文から下の位置は変えない
     }
   }
 
@@ -119,7 +118,7 @@
     flex-direction: column;
     gap: myrem(4);
     align-items: flex-start;
-    margin-top: myrem(14); // 本文との間隔を 24px にする（親の gap は 9px）。見出しと本文の行の高さの端数（計 +1px）を引いている
+    margin-top: myrem(14); // 本文との間隔 24px（親の gap は 9px。行の高さの端数 1px を引く）
 
     @include mq(md) {
       align-self: flex-start;
@@ -199,7 +198,7 @@
       left: myrem(1021);
       display: block;
       width: myrem(346);
-      height: myrem(66.65); // カンプで高さ固定（中身から計算すると 62px になる）
+      height: myrem(66.65); // カンプで高さ固定（中身からだと 62px）
       padding: myrem(12);
       color: var(--color-primary);
       background-color: var(--color-bg);
@@ -208,15 +207,14 @@
     }
   }
 
-  // カンプは文字の上下の余白を詰めて（text-box-trim）行の高さを測っている。
-  // 1行目は大文字の高さ 8px、2行目は矢印の高さ 21px に合わせる
+  // カンプは text-box-trim した状態で測っている。1行目は大文字の高さ 8px、2行目は矢印の高さ 21px
   &__topics-meta {
     display: flex;
     gap: myrem(7);
     font-family: var(--font-en);
     font-size: myrem(12);
     line-height: myrem(8);
-    margin-top: myrem(-1); // 英字の縦位置をカンプに合わせる（ピクセル比較で 1px 下にずれる）
+    margin-top: myrem(-1); // 英字がカンプより 1px 下に出るため
   }
 
   &__topics-label {

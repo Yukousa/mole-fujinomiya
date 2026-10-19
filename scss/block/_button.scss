@@ -23,10 +23,7 @@
   }
 
   // 大（ヒーロー）。文字を中央に置くため、左に矢印と同じ幅の空きを作る
-  // （カンプでは左に紺の矢印が置かれていて背景と同化している）
-  // SP：幅 220px・左寄せ。26 + 空き16 + 8 + 文字108 + 8 + 矢印21 + 余り7 + 26
-  //     （Figma の書き出し画像とピクセル比較して確認済み）
-  // PC：幅 263px で両端に寄せる
+  // SP：幅 220px・左寄せ／PC：幅 263px で両端に寄せる
   &--large {
     width: myrem(220);
     padding: myrem(17) myrem(26);
@@ -46,7 +43,7 @@
 }
 
 // 小（SP だけ小さい。お知らせの「もっと見る」）。button--large と併用する
-// SP：220×52、14px、両端に寄せる（左は矢印と同じ幅の空き）。PC は button--large と同じ
+// SP：高さ 52px・14px・両端に寄せる。PC は button--large と同じ
 .button--compact {
   justify-content: space-between;
   height: myrem(52);
@@ -59,7 +56,7 @@
     width: myrem(21);
   }
 
-  // メディアクエリ内の button--large の指定は、後に書いたこのモディファイアに負けるので PC の値を書き直す
+  // 後に書いたこのモディファイアが button--large の PC 指定に勝つので、PC の値を書き直す
   @include mq(md) {
     height: auto;
     padding-block: myrem(17);
@@ -74,7 +71,7 @@
   }
 }
 
-// 白地（フッターの「お問い合わせ」）。文字の色はカンプで SP #08348a / PC #00206b
+// 白地（フッターの「お問い合わせ」）。文字の色は SP #08348a / PC #00206b
 .button--white {
   color: var(--color-bg-navy);
   background-color: var(--color-bg);

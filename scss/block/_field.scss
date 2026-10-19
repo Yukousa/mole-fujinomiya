@@ -1,7 +1,6 @@
 // Field（FIVE FIELDS の1項目）
 // 番号＋フィールド名＋ラベル、本文、キーワードのタグ。紺背景の上に置く（文字は白）
-// ラベルはカンプどおり Hiragino Kaku Gothic Pro（--font-label。Mac・iOS 以外は Noto Sans JP）。
-// タグはカンプどおり Inter。日本語は Noto Sans JP で表示される（--font-inter）
+// ラベルは Hiragino Kaku Gothic Pro（--font-label）、タグは Inter（--font-inter）
 
 @use "../foundation/mixin" as *;
 
@@ -56,13 +55,12 @@
     border-radius: var(--radius-pill);
   }
 
-  // 4文字のラベル（地域課題）。カンプで左右の余白が 12px に詰めてある
+  // 4文字のラベル（地域課題）。左右の余白を 12px に詰める
   &__label--tight {
     padding-inline: myrem(12);
   }
 
-  // カンプは 12px × 1.4 = 16.8px を 17px に丸めて行を積んでいる（4行で 68px）。
-  // 1.4 のままだと項目ごとに 1px ずつずれていくので、17px に固定する
+  // カンプは 12 × 1.4 = 16.8 を 17px に丸めている。1.4 のままだと項目ごとにずれるので固定する
   &__text {
     font-size: myrem(12);
     line-height: myrem(17);
@@ -74,16 +72,14 @@
     gap: myrem(6);
   }
 
-  // 表示倍率 150% などの画面では 1px の border が約 0.67px に描かれ、padding だけで高さを決めると
-  // 1段ごとに低くなってずれが積み重なる。そのため高さを枠線込みで 26px に固定する。
-  // （横幅は倍率 150% で約 0.7px 狭くなるが、積み重ならず見た目に影響しないので border のままにしている）
+  // 表示倍率 150% などでは border が 1px 未満に描かれ、段ごとにずれが積み重なるので、高さを枠線込みで固定する
   &__tag {
     display: flex;
     align-items: center;
     height: myrem(26);
     padding-inline: myrem(10);
     font-family: var(--font-inter);
-    font-kerning: none; // カンプ（Figma）はタグの日本語を字詰めしていない。Noto Sans JP の字詰めで幅が 0.4〜0.6px 狭くなるため切る
+    font-kerning: none; // カンプは字詰めしていない（Noto Sans JP の字詰めで幅が狭くなる）
     font-size: myrem(12);
     line-height: 1;
     white-space: nowrap;

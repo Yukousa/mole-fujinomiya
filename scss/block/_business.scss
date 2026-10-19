@@ -1,6 +1,6 @@
 // Business（富士宮のビジネス環境を見る）
 // 紺背景。見出し → YouTube の領域 → 数字のカード
-// PC の配置は 1440px のカンプの座標から割り出している
+// PC の配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -61,7 +61,7 @@
 
   &__lead {
     font-size: myrem(14);
-    line-height: myrem(21); // カンプは 14px の normal を 21px に丸めて積んでいる（4行で 84px）
+    line-height: myrem(21); // カンプは 14px の normal を 21px に丸めている
     opacity: 0.86;
 
     @include mq(md) {

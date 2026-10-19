@@ -1,12 +1,11 @@
 // News item（お知らせの1件）
 // サムネイル＋日付・タイトル・抜粋。紺背景の上に置く（文字は白）。TOP のお知らせと、お知らせ一覧で使う
-// SP は抜粋を出さない（カンプどおり）。サムネイルは画像が入るまで色の四角
+// SP は抜粋を出さない。サムネイルは画像が入るまで色の四角
 
 @use "../foundation/mixin" as *;
 
 .news-item {
-  // SP は上揃え（タイトルが1行でも2行でも、日付がサムネイルの上端にそろう。カンプの2行の見た目と同じ位置）
-  // PC は抜粋まで含めて高さがほぼ一定なので、カンプどおり上下中央
+  // SP は上揃え（タイトルの行数によらず、日付をサムネイルの上端にそろえる）。PC は上下中央
   display: flex;
   gap: myrem(12);
   align-items: flex-start;
@@ -36,7 +35,7 @@
     flex-direction: column;
     gap: myrem(5);
     min-width: 0;
-    padding-top: myrem(1); // カンプの日付の位置（サムネイル上端から約 1px 下）
+    padding-top: myrem(1); // 日付をサムネイル上端から 1px 下げる
 
     @include mq(md) {
       gap: myrem(17);
@@ -64,7 +63,7 @@
   &__heading {
     font-size: myrem(14);
     font-weight: 700;
-    line-height: myrem(22); // カンプは 14px × 1.55 = 21.7px を 22px に丸めて積んでいる
+    line-height: myrem(22); // 14 × 1.55 = 21.7
 
     @include mq(md) {
       font-size: myrem(18);

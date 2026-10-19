@@ -1,7 +1,7 @@
 // Fields（FUJINOMIYA FIVE FIELDS）
 // 紺背景。about から続く
 // SP：紹介文 → 五角形 → 5項目を縦に並べる
-// PC：紹介文と五角形を横に並べ、5項目は 3＋2 の中央寄せ。配置は 1440px のカンプの座標から割り出している
+// PC：紹介文と五角形を横に並べ、5項目は 3＋2 の中央寄せ。配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -28,7 +28,7 @@
 
     @include mq(md) {
       flex-direction: row;
-      gap: myrem(54); // カンプ：五角形 x490 − 紹介文の幅 436
+      gap: myrem(54); // 五角形 x490 − 紹介文の幅 436
       align-items: center;
       width: myrem(860);
       margin-left: myrem(290);
@@ -51,7 +51,7 @@
     font-family: var(--font-en);
     font-size: myrem(34);
     font-weight: 700;
-    line-height: myrem(41); // カンプの行の高さ（34px の normal を 41px に丸めている）
+    line-height: myrem(41); // カンプは 34px の normal を 41px に丸めている
     white-space: nowrap;
 
     @include mq(md) {
@@ -106,10 +106,10 @@
     }
   }
 
-  // SP のカンプ幅（390px）ではカンプどおり左寄せ。480px 以上の SP 幅（折りたたみスマホ・小型タブレット）では中央に置く
+  // SP は左寄せ。480px 以上（折りたたみスマホ・小型タブレット）では中央に置く
   &__figure {
     width: myrem(334);
-    height: myrem(319); // カンプの値（縦横比から計算すると 318.65px になる）
+    height: myrem(319); // カンプの値（縦横比からだと 318.65px）
 
     @include mq(sm) {
       align-self: center;

@@ -2,7 +2,7 @@
 // 暗い背景。ロゴ → ナビ（SP は縦並び＋右端に→、PC は横並び）→ 個人情報保護について → コピーライト
 // 上の余白には、相談 CTA の箱が重なる分（SP 40.22px / PC 193.5px）を含む
 // SP の「お問い合わせ」はナビの上に出す（order）。PC はナビの右端
-// PC の配置は 1440px のカンプの座標から割り出している
+// PC の配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -75,7 +75,7 @@
     align-items: center;
     width: 100%;
 
-    // PC：項目の見た目の間隔はカンプどおり 28px。左右 10px ずつをリンクの padding に回してクリック範囲を確保する
+    // PC：見た目の間隔 28px のうち、左右 10px ずつをリンクの padding に回してクリック範囲を確保する
     @include mq(md) {
       flex-direction: row;
       gap: myrem(18); // 最後のリンクの右 padding 10px ＋ 18px = 28px
@@ -99,7 +99,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: myrem(43); // カンプの1行の高さ（区切り線 1px を含む）。padding で決めると 42.8px になり、5行で 1px ずれる
+    height: myrem(43); // 区切り線 1px を含む。padding で決めると 42.8px になりずれる
     font-family: var(--font-inter);
     font-size: myrem(12);
     line-height: 1.25;
@@ -116,7 +116,7 @@
     }
   }
 
-  // SP：大文字が続くこの文字列だけ、Google Fonts の Inter（v4）で Figma より約 1.5px 広くなるので字間を詰める
+  // SP：この文字列は Google Fonts の Inter（v4）で Figma より広くなるので字間を詰める
   &__nav-en {
     letter-spacing: -0.006em;
 
@@ -125,9 +125,8 @@
     }
   }
 
-  // 矢印は SVG（Google Fonts の Inter に「→」が無く、Noto Sans JP の形になってしまうため）。
-  // 位置はカンプとのピクセル比較で合わせた（行の上端から 17.4px、右端から 1px）。
-  // TOP と一覧のカンプで矢印の位置が 1px 違うため、両方の中間にしている（どちらも差 1px 以内）
+  // 矢印は SVG（Google Fonts の Inter に「→」が無いため）
+  // 位置は TOP と一覧のカンプで 1px 違うので、両方の中間にしている
   &__nav-arrow {
     flex-shrink: 0;
     align-self: flex-start;
@@ -160,8 +159,8 @@
     }
   }
 
-  // 見た目の位置は変えずに、上下の余白でクリック範囲を確保する（行の高さ 12/14px ＋ 16px × 2）
-  // SP はナビとの間がカンプで 36px（並びの gap 34px ＋ 2px）
+  // 見た目の位置は変えずに、上下の余白でクリック範囲を確保する
+  // SP はナビとの間を 36px にする（並びの gap 34px ＋ 2px）
   &__privacy {
     padding-block: myrem(16);
     margin-block: myrem(-14) myrem(-16);
@@ -181,7 +180,7 @@
     opacity: 0.55;
 
     @include mq(md) {
-      padding-top: myrem(60); // カンプは nav との間に gap 34px ＋ 上の余白 60px
+      padding-top: myrem(60); // nav との間は gap 34px ＋ 60px
       font-family: var(--font-base);
       font-size: myrem(14);
       line-height: 1;

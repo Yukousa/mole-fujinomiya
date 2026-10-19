@@ -1,8 +1,7 @@
 // Header
-// 画面上部に固定する（カンプのコメント「ヘッダーを追従（PC/SP）」）。
-// 最初は hero の上に重ねるので背景は透明。スクロールしたら背景を付ける（js/main.js の initHeaderScroll）
+// 画面上部に固定する。最初は背景を透明にし、スクロールしたら付ける（js/main.js の initHeaderScroll）
 // SP：ロゴ＋メニューボタン／PC：ロゴ＋グローバルナビ
-// アンカーの遷移先がヘッダーの下に潜らないよう、foundation/_base.scss で [id] に scroll-margin-top を付けている
+// アンカーの遷移先の scroll-margin-top は foundation/_base.scss
 
 @use "../foundation/mixin" as *;
 
@@ -66,8 +65,7 @@
     }
   }
 
-  // 項目の見た目の間隔はカンプどおり 20px。
-  // 左右 10px ずつをリンクの padding に回してクリック範囲を確保し、
+  // 見た目の間隔 20px を、左右 10px ずつリンクの padding に回してクリック範囲を確保する
   // 先頭の padding 分はリストの負マージンで打ち消す
   &__nav {
     display: none;

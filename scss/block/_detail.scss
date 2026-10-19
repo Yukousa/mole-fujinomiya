@@ -18,7 +18,7 @@
     }
   }
 
-  // SP はカンプで左 20px（一覧ページは 24px）
+  // SP は左 20px（一覧ページは 24px）
   &__breadcrumb {
     padding-inline: myrem(20);
     margin-top: myrem(12);
@@ -34,7 +34,7 @@
     margin-top: myrem(10);
 
     @include mq(md) {
-      margin-top: myrem(50.4); // 記事の白い箱の上端 y181（パンくずの下端 y130.6 から）
+      margin-top: myrem(50.4); // 記事の白い箱の上端 y181 − パンくずの下端 y130.6
     }
   }
 }

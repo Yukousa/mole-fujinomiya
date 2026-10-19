@@ -1,7 +1,7 @@
 // FAQ（よくある質問）
 // 紺背景。details / summary で開閉する（JS なしで動き、キーボードでも操作できる）
 // 矢印は開いているとき上向き、閉じているとき下向き
-// PC の配置は 1440px のカンプの座標から割り出している
+// PC の配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -10,7 +10,7 @@
   color: var(--color-text-invert);
 
   @include mq(md) {
-    padding: 0 0 myrem(126); // 相談 CTA の箱までの間隔（カンプ）
+    padding: 0 0 myrem(126); // 相談 CTA の箱までの間隔
   }
 
   &__inner {
@@ -47,7 +47,7 @@
     }
   }
 
-  // カンプの SP は1つ目と2つ目の間だけ 131px 空いているが、ずれと判断して 48px にそろえている
+  // カンプの SP は1つ目と2つ目の間だけ 131px だが、ずれとみなして 48px にそろえる
   &__list {
     display: flex;
     flex-direction: column;
@@ -137,8 +137,8 @@
     background-color: var(--color-overlay-light);
   }
 
-  // カンプは文字の上下の余白を詰めた状態で、箱の余白 20px を測っている。
-  // 行の高さは 14px × 1.6 = 22.4px を 22px に丸めて積んでいる（PC 4行で 76px、SP 8行で 164px）
+  // カンプは text-trim した状態で箱の余白 20px を測っている
+  // 行の高さは 14 × 1.6 = 22.4 を 22px に丸めている
   &__answer-text {
     font-size: myrem(14);
     line-height: myrem(22);

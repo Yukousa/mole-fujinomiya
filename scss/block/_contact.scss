@@ -1,7 +1,6 @@
 // Contact（サテライトオフィス・拠点開設について相談する）
-// 白い箱。紺の背景とフッター（暗い背景）の境目にまたがるので、
-// 負のマージンで箱の下側をフッターに重ね、z-index でフッターより前に出す
-// PC の配置は 1440px のカンプの座標から割り出している
+// 白い箱。負のマージンで下側をフッターに重ね、z-index でフッターより前に出す
+// PC の配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -9,7 +8,7 @@
   position: relative;
   z-index: var(--z-index-base);
   padding-inline: myrem(25);
-  margin-bottom: myrem(-40.22); // フッターに重なる量（カンプ）
+  margin-bottom: myrem(-40.22); // フッターに重なる量
 
   @include mq(md) {
     padding-inline: 0;
@@ -54,7 +53,7 @@
     }
   }
 
-  // カンプの色は SP #083f96 / PC #08348a
+  // 色は SP #083f96 / PC #08348a
   &__lead {
     font-size: myrem(12);
     line-height: 1.7;

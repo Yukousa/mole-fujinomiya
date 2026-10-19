@@ -1,7 +1,7 @@
 // About（富士宮市が選ばれる理由）
 // 紺背景。ヒーローの富士山の下端からそのまま続く
 // SP：左寄せの見出し＋カードの横スクロール
-// PC：中央寄せの見出し＋カード3枚。配置は 1440px のカンプの座標から割り出している
+// PC：中央寄せの見出し＋カード3枚。配置は 1440px のカンプの座標から割り出す
 
 @use "../foundation/mixin" as *;
 
@@ -80,7 +80,7 @@
     font-size: myrem(24);
     font-weight: 700;
     line-height: 1.45;
-    margin-top: myrem(1); // フォントの縦位置の差（ピクセル比較で 1px 上に出る）。PC は text-trim で上書き
+    margin-top: myrem(1); // 文字がカンプより 1px 上に出るため。PC は text-trim で上書き
 
     @include mq(md) {
       font-size: myrem(32);
@@ -105,7 +105,7 @@
     }
   }
 
-  // SP と PC で文言・改行が違う（カンプどおり出し分け）
+  // SP と PC で文言・改行が違うので出し分ける
   &__sp {
     @include mq(md) {
       display: none;
