@@ -44,9 +44,10 @@
   }
 
   // 子の装飾（z-index: -1）をこの中に閉じ込めるため z-index を指定する
+  // 1 にして、後ろに書いている PC の雲（absolute）より前に出す
   &__copy {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: myrem(9);
