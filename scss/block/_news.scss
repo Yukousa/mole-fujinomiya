@@ -20,7 +20,7 @@
     }
   }
 
-  // PC の配置は 1440px のカンプの座標から割り出している（ページ中央より 4.25px 右）
+  // PC の配置は 1440px のカンプの座標から割り出している
   &__content {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     @include mq(md) {
       gap: myrem(60);
       width: myrem(800);
-      margin-left: myrem(324.25);
+      margin-left: myrem(320);
     }
   }
 

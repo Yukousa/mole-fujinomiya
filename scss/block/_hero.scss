@@ -71,10 +71,11 @@
     background-color: var(--color-accent);
     border-radius: var(--radius-tag);
 
+    // Figma の文字の高さ（上下を詰めた状態の 13px）を行の高さにして、パディング 9px でカンプの高さ 31px にする
     @include mq(md) {
-      padding: myrem(6) myrem(8);
+      padding: myrem(9) myrem(8);
       font-size: myrem(18);
-      line-height: 1;
+      line-height: myrem(13);
       border-radius: 0;
     }
   }

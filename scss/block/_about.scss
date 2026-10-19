@@ -28,13 +28,11 @@
     flex-direction: column;
     gap: myrem(40);
 
-    // カンプでは富士山の下端（y975）より 4px 上から始まる
     @include mq(md) {
       gap: myrem(46);
       align-items: center;
       width: myrem(862);
-      margin-top: myrem(-4);
-      margin-left: myrem(293);
+      margin-left: myrem(288.95);
     }
   }
 
